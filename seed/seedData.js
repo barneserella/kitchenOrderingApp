@@ -805,24 +805,24 @@ const week = new Week({
                     components: {
                         protein: 
                             [{
-                                option: 'cod nugget',
+                                option: 'krunchy perch',
                                 ingredients: [
-                                    { name: 'frozen cod nuggets', quantity: 2, unit: 'boxes'},
+                                    { name: 'frozen krunchy perch', quantity: 2, unit: 'boxes'},
                                     { name: 'frozen blue cod', quantity: 1, unit: 'boxes'},
                                     { name: 'tartar sauce', quantity: 4, unit: 'litres'}
                                 ],
-                                option: 'bologna sandwich',
+                                option: 'roast beef sandwich',
                                 ingredients: [
-                                    { name: 'sliced bologna', quantity: 2, unit: 'boxes'},
+                                    { name: 'sliced roast beef', quantity: 2, unit: 'boxes'},
                                 ]
                             }],
                         starch:
                             [{
-                                option: 'rice pilaf',
+                                option: 'sweet potato mash',
                                 ingredients: [
-                                    { name: 'rice pilaf', quantity: 3, unit: 'boxes'}
+                                    { name: 'fresh sweet potato', quantity: 6, unit: 'bags'}
                                 ],
-                                option: 'bologna sandwich',
+                                option: 'roast beef sandwich',
                                 ingredients: [
                                     { name: 'whole wheat bread', quantity: 12, unit: 'loaves'},
                                     { name: 'frozen bread puree', quantity: 3, unit: 'rolls'},
@@ -831,7 +831,356 @@ const week = new Week({
                             }],
                         vegetable:
                             [{
-                                option: 'mexican mix',
+                                option: 'peas & carrots',
+                                ingredients: [
+                                    { name: 'frozen peas', quantity: 6, unit: 'kilograms'},
+                                    { name: 'frozen diced carrots', quantity: 6, unit: 'kilograms'},
+                                ],
+                                option: 'balsamic tomato and cucumber salad',
+                                ingredients: [
+                                    { name: 'fresh tomato', quantity: 4, unit: 'litres'},
+                                    { name: 'fresh cucumber', quantity: 4, unit: 'litres'},
+                                    { name: 'fresh onion', quantity: 2, unit: 'litres'},
+                                    { name: 'balsamic dressing', quantity: 1, unit: 'each'}
+                                ]
+                            }],
+                        dessert:
+                            [{
+                                option: 'strawberry jello with whipped cream',
+                                ingredients: [
+                                    { name: 'strawberry jello powder', quantity: 1, unit: 'bags'},
+                                    { name: 'rainbow sorbet', quantity: 1, unit: 'each'},
+                                    { name: 'whipped cream', quantity: 6, unit: 'bags'}
+                                ],
+                                option: 'banana',
+                                ingredients: [
+                                    { name: 'fresh banana', quantity: 20, unit: 'each'},
+                                    { name: 'banana puree', quantity: 1, unit: 'bags'}
+                                ]
+                            }],
+                        soup: 
+                            [{
+                                option: 'vegetable florentine',
+                                ingredients: [
+                                    { name: 'vegetable florentine soup mix', quantity: 8, unit: 'bags'},
+                                    { name: 'frozen diced carrot', quantity: 1.5, unit: 'kilograms'},
+                                    { name: 'frozen  onion', quantity: 1.5, unit: 'kilograms'},
+                                    { name: 'frozen  celery', quantity: 1.5, unit: 'kilograms'},
+                                    { name: 'flax flour', quantity: 3, unit: 'cups'},
+                                    { name: 'barley', quantity: 4, unit: 'cups'}
+                                ]
+                            }]
+                    }
+                }]
+            },
+            dayName: 'Saturday',
+            meals: {
+                breakfast: [{
+                    components: {
+                        protein: 
+                            [{ option: 'vegetable quiche', 
+                                ingredients: [{ name: 'vegetable quiche', quantity: 90, unit: 'each' },
+                                              { name: 'frozen liquid egg', quantity: 1, unit: 'bags' }]
+                            }],
+                        starch:
+                            [{ option: 'whole wheat bread', 
+                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves' },
+                                              { name: 'frozen bread puree', quantity: 3, unit: 'rolls'}],
+                                option: 'raisin bread',
+                                ingredients: [
+                                    { name: ' raisin bread', quantity: 6, unit: 'loaves'},
+                                    { name: 'apple spice bread puree', quantity: 1, unit: 'rolls'}
+                                ],
+                                option: 'oatmeal',
+                                ingredients: [
+                                    { name: 'oats', quantity: 6, unit: 'litres'},
+                                    { name: 'flax flour', quantity: 3, unit: 'cups'}
+                                ]
+                            }],
+                        vegetable:
+                            [{ 
+                                option: 'banana',
+                                ingredients: [
+                                    { name: 'fresh banana', quantity: 50, unit: 'each'},
+                                    { name: 'banana puree', quantity: 3, unit: 'bags'}
+                                ]
+                            }]
+                    }                
+                }],
+                lunch: [{
+                    components: {
+                        protein: 
+                            [{ 
+                                option: 'croquette', 
+                                ingredients: [
+                                    { name: 'frozen croquette', quantity: 3, unit: 'boxes' },
+                                    { name: 'frozen ground beef', quantity: 7.5, unit: 'lbs'}
+                                ]
+                            },
+                            {
+                                option: 'sweet and sour chicken',
+                                ingredients: [
+                                    { name: 'frozen diced chicken', quantity: 5.5, unit: 'kilograms'}
+                                ]
+                            }],
+                        starch: 
+                            [{
+                                option: 'mashed potatoes',
+                                ingredients: [
+                                    { name: 'instant mashed potato', quantity: 4, unit: 'bags'},
+                                    { name: 'margarine', quantity: 2, unit: 'cups'},
+                                    { name: 'cream', quantity: 1, unit: 'litres'}
+                                ],
+                                option: 'jasmine rice',
+                                ingredients : [
+                                    { name: 'jasmine rice', quantity: 8, unit: 'litres'},
+                                    { name: 'instant mashed potato', quantity: 4, unit: 'bags'},
+                                    { name: 'margarine', quantity: 2, unit: 'cups'},
+                                    { name: 'cream', quantity: 1, unit: 'litres'}
+                                ]
+                            }],
+                        vegetable: 
+                            [{
+                                option: 'harvard beets',
+                                ingredients: [
+                                    { name: 'canned diced beets', quantity: 18.7, unit: 'kilograms'},
+                                    { name: 'brown sugar', quantity: 2.75, unit: 'cups'},
+                                    { name: 'vinegar', quantity: 2.75, unit: 'cups'},
+                                    { name: 'spices', quantity: 1, unit: 'each'}
+                                ],
+                                option: 'sweet and sour chicken',
+                                ingredients: [
+                                    { name: 'frozen red pepper', quantity: 4, unit: 'kilograms'},
+                                    { name: 'frozen green pepper', quantity: 4, unit: 'kilograms'},
+                                    { name: 'frozen onion', quantity: 4, unit: 'kilograms'}
+                                ]
+                            }],
+                        dessert:
+                            [{
+                                option: 'rice pudding with whipped cream',
+                                ingredients: [
+                                    { name: 'canned rts rice pudding', quantity: 4, unit: 'cans'},
+                                    { name: 'milk', quantity: 1, unit: 'bags'},
+                                    { name: 'whipped cream', quantity: 6, unit: 'bags'}
+                                ],
+                                option: 'diced pears',
+                                ingredients: [
+                                    { name: 'canned pears', quantity: 3, unit: 'cans'}
+                                ]
+                            }],
+                        salad:
+                            [{
+                                option: 'garden',
+                                ingredients: [
+                                    { name: 'iceburg lettuce', quantity: 8, unit: 'heads'},
+                                    { name: 'fresh spinach', quantity: 0.25, unit: 'bags'},
+                                    { name: 'fresh red pepper', quantity: 2, unit: 'each'},
+                                    { name: 'fresh carrot', quantity: 3, unit: 'each'}
+                                ]
+                            }]
+                    }
+                }],
+                supper: [{
+                    components: {
+                        protein: 
+                            [{
+                                option: 'honey garlic sausage on a bun',
+                                ingredients: [
+                                    { name: 'frozen honey garlic sausage', quantity: 3, unit: 'boxes'}
+                                ],
+                                option: 'spinach and feta quiche',
+                                ingredients: [
+                                    { name: 'frozen liquid egg', quantity: 3, unit: 'bags'},
+                                    { name: 'frozen spinach nuggets', quantity: 4, unit: 'kilograms'},
+                                    { name: 'feta cheese', quantity: 4, unit: 'cups'}
+                                ]
+                            }],
+                        starch:
+                            [{
+                                option: 'honey garlic sausage on a bun',
+                                ingredients: [
+                                    { name: 'hotdog bun', quantity: 65, unit: 'buns'}
+                                ],
+                                option: 'spinach and feta quiche',
+                                ingredients: [
+                                    { name: 'frozen pie shells', quantity: 15, unit: 'each'}
+                                ]                            
+                            }],
+                        vegetable:
+                            [{
+                                option: 'garden salad',
+                                ingredients: [
+                                    { name: 'iceburg lettuce', quantity: 8, unit: 'heads'},
+                                    { name: 'fresh spinach', quantity: 0.25, unit: 'bags'},
+                                    { name: 'fresh red pepper', quantity: 2, unit: 'each'},
+                                    { name: 'fresh carrot', quantity: 3, unit: 'each'}
+                                ],
+                                option: 'french beans',
+                                ingredients: [
+                                    { name: 'frozen french beans', quantity: 10, unit: 'kilograms'}
+                                ]
+                            }],
+                        dessert:
+                            [{
+                                option: 'strawberry mousse',
+                                ingredients: [
+                                    { name: 'strawberry mousse powder', quantity: 2, unit: 'bags'},
+                                    { name: 'milk', quantity: 2, unit: 'bags'}
+                                ],
+                                option: 'fresh orange',
+                                ingredients: [
+                                    { name: 'fresh orange', quantity: 20, unit: 'each'},
+                                    { name: 'canned mandarins', quantity: 2, unit: 'cans'}
+                                ]
+                            }],
+                        soup: 
+                            [{
+                                option: 'vegetable beef barley',
+                                ingredients: [
+                                    { name: 'vegetavble beef barley soup mix', quantity: 8, unit: 'bags'},
+                                    { name: 'frozen diced carrot', quantity: 1.5, unit: 'kilograms'},
+                                    { name: 'frozen  onion', quantity: 1.5, unit: 'kilograms'},
+                                    { name: 'frozen  celery', quantity: 1.5, unit: 'kilograms'},
+                                    { name: 'flax flour', quantity: 3, unit: 'cups'},
+                                    { name: 'barley', quantity: 4, unit: 'cups'}
+                                ]
+                            }]
+                    }
+                }]
+            },
+            dayName: 'Sunday',
+            meals: {
+                breakfast: [{
+                    components: {
+                        protein: 
+                            [{ option: 'soft boiled egg', 
+                                ingredients: [{ name: 'egg', quantity: 90, unit: 'each' },
+                                              { name: 'frozen liquid egg', quantity: 2, unit: 'bags' }]
+                            }],
+                        starch:
+                            [{ option: 'whole wheat bread', 
+                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves' },
+                                              { name: 'frozen bread puree', quantity: 3, unit: 'rolls'}],
+                                option: 'raisin bread',
+                                ingredients: [
+                                    { name: ' raisin bread', quantity: 6, unit: 'loaves'},
+                                    { name: 'apple spice bread puree', quantity: 1, unit: 'rolls'}
+                                ],
+                                option: 'oatmeal',
+                                ingredients: [
+                                    { name: 'oats', quantity: 6, unit: 'litres'},
+                                    { name: 'flax flour', quantity: 3, unit: 'cups'}
+                                ]
+                            }],
+                        vegetable:
+                            [{ 
+                                option: 'banana',
+                                ingredients: [
+                                    { name: 'fresh banana', quantity: 50, unit: 'each'},
+                                    { name: 'banana puree', quantity: 3, unit: 'bags'}
+                                ]
+                            }]
+                    }                
+                }],
+                lunch: [{
+                    components: {
+                        protein: 
+                            [{ 
+                                option: 'pollock fingers', 
+                                ingredients: [
+                                    { name: 'frozen pollock fingers', quantity: 2, unit: 'boxes' },
+                                    { name: 'frozen blue cod', quantity: 1, unit: 'boxes'},
+                                    { name: 'tartar sauce', quantity: 4, unit: 'litres'}
+                                ]
+                            },
+                            {
+                                option: 'pork rollade',
+                                ingredients: [
+                                    { name: 'frozen pork rollade roast', quantity: 4, unit: 'each'}
+                                ]
+                            }],
+                        starch: 
+                            [{
+                                option: 'mashed potatoes',
+                                ingredients: [
+                                    { name: 'instant mashed potato', quantity: 4, unit: 'bags'},
+                                    { name: 'margarine', quantity: 2, unit: 'cups'},
+                                    { name: 'cream', quantity: 1, unit: 'litres'}
+                                ],
+                                option: 'au gratin potatoes',
+                                ingredients : [
+                                    { name: 'au gratin potatoes', quantity: 3, unit: 'boxes'}                                    
+                                ]
+                            }],
+                        vegetable: 
+                            [{
+                                option: 'roasted squash',
+                                ingredients: [
+                                    { name: 'frozen squash', quantity: 16, unit: 'kilograms'},
+                                    { name: 'cinnamon', quantity: 1, unit: 'each'},
+                                    { name: 'canola oil', quantity: 1, unit: 'each'}
+                                ],
+                                option: 'broccoli and cauliflower',
+                                ingredients: [
+                                    { name: 'frozen broccoli', quantity: 6, unit: 'kilograms'},
+                                    { name: 'frozen cauliflower', quantity: 6, unit: 'kilograms'}
+                                ]
+                            }],
+                        dessert:
+                            [{
+                                option: 'blueberry pie with whipped cream',
+                                ingredients: [
+                                    { name: 'frozen blueberry pie', quantity: 15, unit: 'each'},
+                                    { name: 'whipped cream', quantity: 6, unit: 'bags'}
+                                ],
+                                option: 'mandarin oranges',
+                                ingredients: [
+                                    { name: 'canned mandarins', quantity: 3, unit: 'cans'}
+                                ]
+                            }],
+                        salad:
+                            [{
+                                option: 'ceaser',
+                                ingredients: [
+                                    { name: 'romaine lettuce', quantity: 1, unit: 'case'},
+                                    { name: 'fresh spinach', quantity: 0.25, unit: 'bags'},
+                                    { name: 'fresh red onion', quantity: 2, unit: 'each'}
+                                ]
+                            }]
+                    }
+                }],
+                supper: [{
+                    components: {
+                        protein: 
+                            [{
+                                option: 'maple bacon chicken thigh',
+                                ingredients: [
+                                    { name: 'chicken thigh', quantity: 70, unit: 'each'},
+                                    { name: 'frozen diced chicken', quantity: 1, unit: 'boxes'}
+                                ],
+                                option: 'gouda cheese on a raisin bun',
+                                ingredients: [
+                                    { name: 'gouda cheese', quantity: 8, unit: 'packages'},
+                                    { name: 'cheese whiz', quantity: 6, unit: 'flats'}
+                                ]
+                            }],
+                        starch:
+                            [{
+                                option: 'roasted potato with sour cream',
+                                ingredients: [
+                                    { name: 'frozen diced potato', quantity: 4, unit: 'bags'},
+                                    { name: 'sour cream', quantity: 1, unit: 'tubs'}
+                                ],
+                                option: 'gouda cheese on a raisin bun',
+                                ingredients: [
+                                    { name: 'raisin bun', quantity: 90, unit: 'each'},
+                                    { name: 'frozen apple spice bread puree', quantity: 4, unit: 'rolls'},
+                                    { name: 'margarine cups', quantity: 1, unit: 'box'}
+                                ]                            
+                            }],
+                        vegetable:
+                            [{
+                                option: 'mixed vegetables',
                                 ingredients: [
                                     { name: 'frozen red pepper', quantity: 2, unit: 'kilograms'},
                                     { name: 'frozen green pepper', quantity: 2, unit: 'kilograms'},
@@ -839,19 +1188,16 @@ const week = new Week({
                                     { name: 'frozen onion', quantity: 2, unit: 'kilograms'},
                                     { name: 'frozen zucchini', quantity: 2, unit: 'kilograms'}
                                 ],
-                                option: 'carrot salad',
+                                option: 'stewed apples',
                                 ingredients: [
-                                    { name: 'frozen diced carrot', quantity: 8, unit: 'kilograms'},
-                                    { name: 'mayonaise', quantity: 1, unit: 'buckets'},
-                                    { name: 'plain yogurt', quantity: 1, unit: 'bags'},
-                                    { name: 'dill', quantity: 1, unit: 'each'}
+                                    { name: 'canned apple slices', quantity: 4, unit: 'cans'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'lime jello with whipped cream',
+                                option: 'vanilla ice cream',
                                 ingredients: [
-                                    { name: 'lime jello powder', quantity: 1, unit: 'bags'},
+                                    { name: 'vanilla ice cream cups', quantity: 6, unit: 'boxes'},
                                     { name: 'rainbow sorbet', quantity: 1, unit: 'each'},
                                     { name: 'whipped cream', quantity: 6, unit: 'bags'}
                                 ],

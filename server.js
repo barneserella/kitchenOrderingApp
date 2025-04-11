@@ -1,13 +1,21 @@
-const express = require('express')
-const app = express()
-const port = 3000
-const mongoose = require('mongoose')
+const express = require('express');
+const port = 3000;
+const mongoose = require('mongoose');
+const ingredientsRouter = require('./routes/ingredients');
+
+const app = express();
+
+// connect to MongoDB
+mongoose.connect();
 
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+// Middleware
+app.set('view engine', 'ejs');
+app.use(express.static('public'));
+app.use("/", ingredientsRouter);
 
+
+// Start the server
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
