@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const ingredientsRouter = require('./routes/ingredients');
 require('dotenv').config({ path: './config/.env' });
 const connectDB = require("./config/database");
@@ -13,6 +12,8 @@ connectDB();
 // Middleware
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 app.use("/", ingredientsRouter);
 
 

@@ -3,8 +3,7 @@ const router = express.Router();
 const ingredientsController = require("../controllers/ingredients");
 
 
-// router.get("/", ingredientsController.getIngredients);
-router.get("/ingredients/:weekNumber", ingredientsController.getIngredients);
-router.post("/ingredients/:weekNumber", ingredientsController.showIngredients);
+router.get("/", ingredientsController.getIngredients);
+router.post("/ingredients", ingredientsController.showIngredients);
 
 module.exports = router;

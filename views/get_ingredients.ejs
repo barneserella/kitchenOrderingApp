@@ -8,12 +8,27 @@
 <body>
     <h1>Get Ingredients Needed</h1>
     <div class="form-control">
-        <form action="POST">
+        <form action="/ingredients" method="POST">
             <label for="week-number">Input week number: </label>
-            <input id="week-number" type="number" value="1">
+            <input name="weekNumber" id="week-number" type="number" value="1">
             <input type="submit" value="Get Ingredients" />
         </form>
     </div>
 
+    <% if (error) { %>
+        <p style="color: red;"><%= error %></p>
+    <% } %>
+
+    <% if (ingredients) { %>
+
+        <h2>Ingredients For Week <% { weekNumber } %> </h2>
+        <ul>
+            <% ingredients.forEach(ingredient => { %>
+                <li>
+                    <%= ingredient.name %>: <%= ingredient.quantity %> <%= ingredient.unit %>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
 </body>
 </html>
