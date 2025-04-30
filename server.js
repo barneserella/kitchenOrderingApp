@@ -1,12 +1,13 @@
 const express = require('express');
-const port = 3000;
 const mongoose = require('mongoose');
 const ingredientsRouter = require('./routes/ingredients');
+require('dotenv').config({ path: './config/.env' });
+const connectDB = require("./config/database");
 
 const app = express();
 
 // connect to MongoDB
-mongoose.connect();
+connectDB();
 
 
 // Middleware
@@ -16,6 +17,6 @@ app.use("/", ingredientsRouter);
 
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+app.listen(process.env.PORT, () => {
+  console.log(`App listening on port ${process.env.PORT}`)
 })
