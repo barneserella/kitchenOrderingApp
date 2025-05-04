@@ -1,19 +1,33 @@
-const week = new Week({
-    weekNumber: 1,
-    days: [
-        {
-            dayName: 'Monday',
-            meals: {
-                breakfast: [{
-                    components: {
-                        protein: 
-                            [{ option: 'soft boiled egg', 
-                                ingredients: [{ name: 'egg', quantity: 90, unit: 'each' },
-                                              { name: 'frozen liquid egg', quantity: 2, unit: 'bags' }]
-                            }],
-                        starch:
-                            [{ option: 'whole wheat bread', 
-                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves' },
+const mongoose = require('mongoose');
+const Week = require('../models/Week');
+
+
+
+async function seedDatabase() {
+
+    await mongoose.connect('mongodb+srv://girlthisismycodingemail:R93WdrEvpbVyaytg@groceryorder.hzrh2.mongodb.net/?retryWrites=true&w=majority&appName=groceryOrder');
+    
+    console.log(`MongoDB Connected`);
+    
+    // Clear the collection before seeding
+    await Week.deleteMany({});
+    
+    const week1 = new Week({
+        weekNumber: 1,
+        days: [
+            {
+                dayName: 'Monday',
+                meals: {
+                    breakfast: [{
+                        components: {
+                            protein: 
+                                [{ option: 'soft boiled egg', 
+                                    ingredients: [{ name: 'egg', quantity: 90, unit: 'each' },
+                                                  { name: 'frozen liquid egg', quantity: 2, unit: 'bags' }]
+                                }],
+                            starch:
+                                [{ option: 'whole wheat bread', 
+                                    ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves' },
                                               { name: 'frozen bread puree', quantity: 3, unit: 'rolls'}],
                                 option: 'raisin bread',
                                 ingredients: [
@@ -180,7 +194,7 @@ const week = new Week({
                             }]
                     }
                 }]
-            },
+            }}, {
             dayName: 'Tuesday',
             meals: {
                 breakfast: [{
@@ -347,7 +361,7 @@ const week = new Week({
                             }]
                     }
                 }]
-            },
+            }}, {
             dayName: 'Wednesday',
             meals: {
                 breakfast: [{
@@ -523,7 +537,7 @@ const week = new Week({
                             }]
                     }
                 }]
-            },
+            }}, {
             dayName: 'Thursday',
             meals: {
                 breakfast: [{
@@ -703,7 +717,7 @@ const week = new Week({
                             }]
                     }
                 }]
-            },
+            }}, {
             dayName: 'Friday',
             meals: {
                 breakfast: [{
@@ -872,7 +886,7 @@ const week = new Week({
                             }]
                     }
                 }]
-            },
+            }}, {
             dayName: 'Saturday',
             meals: {
                 breakfast: [{
@@ -1047,7 +1061,7 @@ const week = new Week({
                             }]
                     }
                 }]
-            },
+            }}, {
             dayName: 'Sunday',
             meals: {
                 breakfast: [{
@@ -1221,6 +1235,20 @@ const week = new Week({
                     }
                 }]
             },
-        }
+            }
     ]
-})
+});
+try{
+await week1.save();
+console.log("Seed data added!");
+mongoose.connection.close();
+}catch(err){
+    console.error("Error saving week 1:", err.message);
+}
+
+};
+
+
+
+// Run the function
+seedDatabase();

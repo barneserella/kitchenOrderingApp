@@ -10,8 +10,8 @@
     <div class="form-control">
         <form action="/ingredients" method="POST">
             <label for="week-number">Input week number: </label>
-            <input name="weekNumber" id="week-number" type="number" value="1">
-            <input type="submit" value="Get Ingredients" />
+            <input name="weekNumber" id="week-number" type="number" >
+            <button type="submit" id="button-element" value="Get Ingredients">Get Ingredients</button> 
         </form>
     </div>
 
@@ -21,7 +21,7 @@
 
     <% if (ingredients) { %>
 
-        <h2>Ingredients For Week <% { weekNumber } %> </h2>
+        <h2>Ingredients For Week <%  weekNumber  %> </h2>
         <ul>
             <% ingredients.forEach(ingredient => { %>
                 <li>
@@ -30,5 +30,28 @@
             <% }); %>
         </ul>
     <% } %>
+
+    <!-- <script>
+        document.getElementById('ingredientForm').addEventListener('submit', (e)=> {
+            e.preventDefault();
+
+            const inputValue = document.getElementById('week-number').value;
+
+            
+                fetch('/ingredients', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ inputValue })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    console.log('Server response:', data);
+                })
+                .catch(err => console.error('Error:', err));
+            
+        });
+    </script> -->
 </body>
 </html>
