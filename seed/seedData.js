@@ -5,7 +5,7 @@ const Week = require('../models/Week');
 
 async function seedDatabase() {
 
-    await mongoose.connect('mongodb+srv://girlthisismycodingemail:R93WdrEvpbVyaytg@groceryorder.hzrh2.mongodb.net/?retryWrites=true&w=majority&appName=groceryOrder');
+    await mongoose.connect('');
     
     console.log(`MongoDB Connected`);
     
