@@ -1,119 +1,94 @@
 const Week = require("../models/Week");
 
-module.exports = {
 
+module.exports = {
     getIngredients: (req, res) => {
-       
-            res.render("get_ingredients.ejs", { ingredients: null, error: null });
-        
+        res.render("get_ingredients.ejs", { ingredients: null, error: null });
     },
 
     showIngredients: async (req, res) => {
-       
-        const weekNumber = req.body.inputValue;
+        const allDays = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+        const { startDay, endDay, startWeek, endWeek } = req.body;
 
-        try {     
-            const week = await Week.findOne( weekNumber ).lean();
+        function getDayRange(from, to) {
+            const start = allDays.indexOf(from);
+            const end = allDays.indexOf(to);
 
-            if(!week){
-                return res.render("get_ingredients.ejs", {
-                    ingredients: null,
-                    error: "Week not found.",
-                });
+            if (start <= end) return allDays.slice(start, end + 1);
+            return allDays.slice(start).concat(allDays.slice(0, end + 1));
+        }
+
+        async function getSelectedDaysAcrossWeeks(startDay, endDay, startWeek, endWeek) {
+            const weeksToFetch = [];
+            for (let i = Number(startWeek); i <= Number(endWeek); i++) {
+                weeksToFetch.push(i);
             }
 
-            // Ingredients Map for gathering all ingredients for the week
-            const ingredientsMap  = {};
+            console.log('Weeks to fetch:', weeksToFetch);
 
-            
-                week.days.forEach((day) => {
-                    ['breakfast', 'lunch', 'supper'].forEach(mealType => {
-                        const meals = day.meals[mealType] || [];
-            
-                        meals.forEach(meal => {
-                            // const components = meal.components;
-            
-                            // Iterate over each component group: protein, starch, etc.
-                            Object.values(meal.components).forEach(componentArray => {
-                                // console.log('componentArray:', componentArray);
+            const weeks = await Week.find({ weekNumber: { $in: weeksToFetch } });
+            console.log('Weeks:', weeks);
 
-                                componentArray.forEach(option => {
-                                    const ingredients = option.ingredients || [];
-                                    ingredients.forEach(ingredient => {
-                                        const key = `${ingredient.name} - ${ingredient.unit}`;
-                                        if (ingredientsMap[key]) {
-                                            ingredientsMap[key].quantity += ingredient.quantity;
-                                        } else {
-                                            ingredientsMap[key] = { ...ingredient };
-                                        }
-                                    });
+            const selectedDays = [];
+
+            for (const week of weeks) {
+                let dayNamesForWeek = [];
+
+                if (week.weekNumber === Number(startWeek) && week.weekNumber === Number(endWeek)) {
+                    dayNamesForWeek = getDayRange(startDay, endDay);
+                } else if (week.weekNumber === Number(startWeek)) {
+                    dayNamesForWeek = getDayRange(startDay, 'Sunday');
+                } else if (week.weekNumber === Number(endWeek)) {
+                    dayNamesForWeek = getDayRange('Monday', endDay);
+                } else {
+                    dayNamesForWeek = allDays;
+                }
+
+                console.log(`Filtering days for week ${week.weekNumber}`);
+                console.log("Looking for days:", dayNamesForWeek);
+                console.log("Week has days:", week.days.map(d => d.dayName));
+
+                selectedDays.push(
+                    ...week.days.filter(day => dayNamesForWeek.includes(day.dayName))
+                );
+            }
+
+            return selectedDays;
+        }
+
+        try {
+            const selectedDays = await getSelectedDaysAcrossWeeks(startDay, endDay, startWeek, endWeek);
+            console.log('Selected Days:', selectedDays);
+            const ingredientsMap = {};
+
+            selectedDays.forEach(day => {
+                ['breakfast', 'lunch', 'supper'].forEach(mealType => {
+                    const meals = day.meals[mealType];
+                    if (!meals) return;
+
+                    meals.forEach(meal => {
+                        Object.values(meal.components).forEach(componentArray => {
+                            componentArray.forEach(option => {
+                                option.ingredients.forEach(ingredient => {
+                                    const key = `${ingredient.name} - ${ingredient.unit}`;
+                                    if (ingredientsMap[key]) {
+                                        ingredientsMap[key].quantity += ingredient.quantity;
+                                    } else {
+                                        ingredientsMap[key] = ingredient.toObject();
+                                    }
                                 });
                             });
                         });
                     });
                 });
-            
-               
-            
+            });
 
-            // week.days.forEach((day) => {
-            //     ['breakfast', 'lunch', 'supper'].forEach(mealType => {
-            //         for(const meals in mealType){
-            //             meals.forEach(meal => {
-            //                 for(const meal in component)
-            //             })
-            //         }
-            //         // const meals = day.meals[mealType]
-                    
-            //         meals.forEach(meal => {
-            //             for(const element in component) {
-            //                 element.map(option => option.ingredients.forEach(ingredient => {
-            //                     const key = `${ingredient.name} - ${ingredient.unit}`;
-            //                         if(ingredientsMap[key]) {
-            //                             ingredientsMap[key].quantity += ingredient.quantity;
-            //                         }else{
-            //                             ingredientsMap[key] = { ...ingredient };
-            //                         }
-            //                 }));
+            const totalIngredients = Object.values(ingredientsMap).map(ingredient => ingredient.toObject ? ingredient.toObject() : ingredient);
 
-            //             };
-            //         });
-
-            //     });
-            // });
-
-
-            // week.days.forEach((day) => {
-            //     ["breakfast", "lunch", "supper"].forEach(mealType => {
-            //         const meals = day.meals[mealType]
-
-            //         meals.forEach(meal => {
-            //             console.log(Object.entries(meal.components))
-            //             Object.values(meal.components).forEach(componentArray => {
-            //                 console.log(Object.entries(componentArray).map((entry) => entry.forEach(console.log(entry))))
-            //                 // componentArray.forEach
-            //                 Object.entries(componentArray).map                            ((option) => {
-            //                     option.ingredients.forEach(ingredient => {
-            //                         const key = `${ingredient.name} - ${ingredient.unit}`;
-            //                         if(ingredientsMap[key]) {
-            //                             ingredientsMap[key].quantity += ingredient.quantity;
-            //                         }else{
-            //                             ingredientsMap[key] = { ...ingredient };
-            //                         }
-            //                     });
-            //                 });
-            //             });
-            //         });
-            //     });
-            // });
-
-            const totalIngredients = Object.values(ingredientsMap);
-            res.render("get_ingredients.ejs", { 
-                weekNumber: weekNumber,
+            res.render("get_ingredients.ejs", {
                 ingredients: totalIngredients,
                 error: null,
-             });
-
+            });
         } catch (err) {
             console.error("Error fetching ingredients:", err);
             res.render("get_ingredients.ejs", {
@@ -121,22 +96,5 @@ module.exports = {
                 error: "Server error. Try again later.",
             });
         }
-    },
-
-    // showWeekMenu: (req , res) => {
-    //     try{
-
-    //     }catch{
-
-    //     }
-    // },
-
-    // showDayMenu: (req, res) => {
-    //     try{
-
-    //     }catch {
-
-    //     }
-    // }
-
+    }
 };

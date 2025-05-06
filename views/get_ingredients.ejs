@@ -9,11 +9,40 @@
     <h1>Get Ingredients Needed</h1>
     <div class="form-control">
         <form action="/ingredients" method="POST">
-            <label for="week-number">Input week number: </label>
-            <input name="weekNumber" id="week-number" type="number" >
-            <button type="submit" id="button-element" value="Get Ingredients">Get Ingredients</button> 
-        </form>
+
+            <label>Start Week:</label>
+            <input type="number" name="startWeek" />
+
+            <label>Start Day:</label>
+            <select name="startDay">
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+
+            <label>End Week:</label>
+            <input type="number" name="endWeek" />
+          
+            <label>End Day:</label>
+            <select name="endDay">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+          
+            <button type="submit">Get Ingredients</button>
+          </form>
     </div>
+
+    <!-- <pre><%= JSON.stringify(ingredients, null, 2) %></pre> -->
 
     <% if (error) { %>
         <p style="color: red;"><%= error %></p>
@@ -21,13 +50,15 @@
 
     <% if (ingredients) { %>
 
-        <h2>Ingredients For Week <%  weekNumber  %> </h2>
+        <h2>Ingredients Needed</h2>
         <ul>
             <% ingredients.forEach(ingredient => { %>
                 <li>
-                    <%= ingredient.name %>: <%= ingredient.quantity %> <%= ingredient.unit %>
+                    <%= ingredient.name %>: 
+                    <%= ingredient.quantity %> 
+                    <%= ingredient.unit %>
                 </li>
-            <% }); %>
+            <% }) %>
         </ul>
     <% } %>
 
