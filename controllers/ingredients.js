@@ -88,6 +88,10 @@ module.exports = {
             res.render("get_ingredients.ejs", {
                 ingredients: totalIngredients,
                 error: null,
+                startWeek: startWeek,
+                endWeek: endWeek,
+                startDay: startDay,
+                endDay: endDay,
             });
         } catch (err) {
             console.error("Error fetching ingredients:", err);
