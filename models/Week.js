@@ -9,30 +9,30 @@ const WeekSchema = new mongoose.Schema({
             meals: {
                 breakfast: [{
                     components: {
-                        protein: [{ option: String, ingredients: [{name: String, quantity: Number, unit: String }]}],
-                        starch: [{ option: String, ingredients: [{name: String, quantity: Number, unit: String}]}],
-                        vegetable: [{option: String, ingredients: [{name: String, quantity: Number, unit: String}]}]
+                        protein: [{ option: String, ingredients: [{name: String, quantity: Number, unit: String, group: String}]}],
+                        starch: [{ option: String, ingredients: [{name: String, quantity: Number, unit: String, group: String}]}],
+                        vegetable: [{option: String, ingredients: [{name: String, quantity: Number, unit: String, group: String}]}]
                     }
                 }],
                 lunch: [
                     {
                         components: {
-                            protein:[{ option: String, ingredients: [{name: String, quantity: Number, unit: String}]}],
-                            starch: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String }]}],
-                            vegetable: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String }]}],
-                            dessert: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String }]}],
-                            salad: [{ option: String, dressing: String, ingredients: [{ name: String, quantity: Number, unit: String }]}]
+                            protein:[{ option: String, ingredients: [{name: String, quantity: Number, unit: String, group: String}]}],
+                            starch: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String, group: String }]}],
+                            vegetable: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String, group: String }]}],
+                            dessert: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String, group: String }]}],
+                            salad: [{ option: String, dressing: String, ingredients: [{ name: String, quantity: Number, unit: String, group: String }]}]
                         }
                     }
                 ],
                 supper: [
                     {
                         components: {
-                            protein:[{ option: String, ingredients: [{name: String, quantity: Number, unit: String}]}],
-                            starch: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String }]}],
-                            vegetable: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String }]}],
-                            dessert: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String }]}],
-                            soup: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String }]}]
+                            protein:[{ option: String, ingredients: [{name: String, quantity: Number, unit: String, group: String}]}],
+                            starch: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String, group: String }]}],
+                            vegetable: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String, group: String }]}],
+                            dessert: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String, group: String }]}],
+                            soup: [{ option: String, ingredients: [{ name: String, quantity: Number, unit: String, group: String }]}]
                         }
                     }
                 ]

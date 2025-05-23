@@ -53,44 +53,70 @@
 
     <% if (ingredients) { %>
 
-        <h2>Ingredients Needed for <% if(startWeek === endWeek) { %>
+        <h2>Ingredients Needed for <% if(startWeek === endWeek && startDay === endDay){ %>
+            <%= startDay %>, Week <%= startWeek %>
+        <% }else if(startWeek === endWeek) { %>
             <%= startDay %> - <%= endDay %>, Week <%= startWeek %>
         <% }else{ %>
             <%= startDay %>, Week <%= startWeek %> - <%= endDay %>, Week <%= endWeek %>
         <% } %>  
              </h2>
+        <div class="container">
+        
         <ul>
+            <h3>Fresh</h3>
             <% ingredients.forEach(ingredient => { %>
+                <% if(ingredient.group === 'fresh') { %> 
                 <li>
                     <%= ingredient.name %>: 
                     <%= ingredient.quantity %> 
                     <%= ingredient.unit %>
                 </li>
+                <% } %>
             <% }) %>
         </ul>
+        
+        <ul>
+            <h3>Frozen</h3>
+            <% ingredients.forEach(ingredient => { %>
+                <% if(ingredient.group === 'frozen') { %> 
+                <li>
+                    <%= ingredient.name %>: 
+                    <%= ingredient.quantity %> 
+                    <%= ingredient.unit %>
+                </li>
+                <% } %>
+            <% }) %>
+        </ul>
+        
+        <ul>
+            <h3>Pantry</h3>
+            <% ingredients.forEach(ingredient => { %>
+                <% if(ingredient.group === 'pantry') { %> 
+                <li>
+                    <%= ingredient.name %>: 
+                    <%= ingredient.quantity %> 
+                    <%= ingredient.unit %>
+                </li>
+                <% } %>
+            <% }) %>
+        </ul>
+        
+        <ul>
+            <h3>Produce</h3>
+            <% ingredients.forEach(ingredient => { %>
+                <% if(ingredient.group === 'produce') { %> 
+                <li>
+                    <%= ingredient.name %>: 
+                    <%= ingredient.quantity %> 
+                    <%= ingredient.unit %>
+                </li>
+                <% } %>
+            <% }) %>
+        </ul>
+    </div>
     <% } %>
 
-    <!-- <script>
-        document.getElementById('ingredientForm').addEventListener('submit', (e)=> {
-            e.preventDefault();
-
-            const inputValue = document.getElementById('week-number').value;
-
-            
-                fetch('/ingredients', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({ inputValue })
-                })
-                .then(res => res.json())
-                .then(data => {
-                    console.log('Server response:', data);
-                })
-                .catch(err => console.error('Error:', err));
-            
-        });
-    </script> -->
+    
 </body>
 </html>
