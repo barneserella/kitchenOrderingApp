@@ -59,6 +59,7 @@ module.exports = {
         try {
             const selectedDays = await getSelectedDaysAcrossWeeks(startDay, endDay, startWeek, endWeek);
             console.log('Selected Days:', selectedDays);
+            // console.log(selectedDays.dayName[Tuesday].meals)
             const ingredientsMap = {};
 
             selectedDays.forEach(day => {

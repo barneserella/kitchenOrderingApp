@@ -61,13 +61,42 @@
             <%= startDay %>, Week <%= startWeek %> - <%= endDay %>, Week <%= endWeek %>
         <% } %>  
              </h2>
+
+             <div class="container">
+        
+                <ul>
+                    <button class="button dairy">Dairy</button>
+                    <% ingredients.forEach(ingredient => { %>
+                        <% if(ingredient.group === 'dairy') { %> 
+                        <li id="dairy" class="hidden">
+                            <%= ingredient.name %>: 
+                            <%= ingredient.quantity %> 
+                            <%= ingredient.unit %>
+                        </li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+                
+                <ul>
+                    <button class="button seasoning">Seasoning</button>
+                    <% ingredients.forEach(ingredient => { %>
+                        <% if(ingredient.group === 'seasoning') { %> 
+                        <li id="seasoning" class="hidden">
+                            <%= ingredient.name %>: 
+                            <%= ingredient.quantity %> 
+                            <%= ingredient.unit %>
+                        </li>
+                        <% } %>
+                    <% }) %>
+                </ul>
+        </div>
         <div class="container">
         
         <ul>
-            <h3>Fresh</h3>
+            <button class="button fresh">Fresh</button>
             <% ingredients.forEach(ingredient => { %>
                 <% if(ingredient.group === 'fresh') { %> 
-                <li>
+                <li id="fresh">
                     <%= ingredient.name %>: 
                     <%= ingredient.quantity %> 
                     <%= ingredient.unit %>
@@ -77,10 +106,10 @@
         </ul>
         
         <ul>
-            <h3>Frozen</h3>
+            <button class="button frozen">Frozen</button>
             <% ingredients.forEach(ingredient => { %>
                 <% if(ingredient.group === 'frozen') { %> 
-                <li>
+                <li id="frozen">
                     <%= ingredient.name %>: 
                     <%= ingredient.quantity %> 
                     <%= ingredient.unit %>
@@ -90,10 +119,10 @@
         </ul>
         
         <ul>
-            <h3>Pantry</h3>
+            <button class="button pantry">Pantry</button>
             <% ingredients.forEach(ingredient => { %>
                 <% if(ingredient.group === 'pantry') { %> 
-                <li>
+                <li id="pantry">
                     <%= ingredient.name %>: 
                     <%= ingredient.quantity %> 
                     <%= ingredient.unit %>
@@ -103,10 +132,10 @@
         </ul>
         
         <ul>
-            <h3>Produce</h3>
+            <button class="button produce">Produce</button>
             <% ingredients.forEach(ingredient => { %>
                 <% if(ingredient.group === 'produce') { %> 
-                <li>
+                <li id="produce">
                     <%= ingredient.name %>: 
                     <%= ingredient.quantity %> 
                     <%= ingredient.unit %>
@@ -117,6 +146,6 @@
     </div>
     <% } %>
 
-    
+    <script src="/main.js"></script>
 </body>
 </html>
