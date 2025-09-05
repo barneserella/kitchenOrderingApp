@@ -10,10 +10,10 @@ async function seedDatabase() {
     console.log(`MongoDB Connected`);
     
     // Clear the collection before seeding
-    await Week.deleteMany({});
+    // await Week.deleteMany({});
     
-    const week1 = new Week({
-        weekNumber: 1,
+    const week2 = new Week({
+        weekNumber: 2,
         days: [
             {
                 dayName: 'Monday',
@@ -54,62 +54,55 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{ 
-                                option: 'BBQ chicken breast', 
+                                option: 'Honey Garlic Pork Bites', 
                                 ingredients: [
-                                    { name: 'frozen chicken breast', quantity: 3, unit: 'boxes', group: 'frozen' },
-                                    { name: 'bbq sauce', quantity: 2, unit: 'jugs', group: 'pantry'}
+                                    { name: 'frozen pork bites', quantity: 3, unit: 'boxes', group: 'frozen' },
+                                    { name: 'honey garlic sauce', quantity: 2, unit: 'jugs', group: 'pantry'}
                                 ]
                             },
                             {
-                                option: 'bahmi',
+                                option: 'Almond Crusted Sole',
                                 ingredients: [
-                                    { name: 'frozen bacon bits', quantity: 1, unit: 'bags', group: 'frozen'}
+                                    { name: 'frozen almond sole filets', quantity: 5, unit: 'boxes', group: 'frozen'}
                                 ]
                             }],
                         starch: 
                             [{
-                                option: 'mashed potatoes',
+                                option: 'Rice Pilaf',
                                 ingredients: [
+                                    { name: 'rice pilaf', quantity: 4, unit: 'boxes', group: 'pantry'}
+                                ],
+                                option: 'Mashed Potatoes',
+                                ingredients : [
                                     { name: 'instant mashed potato', quantity: 4, unit: 'bags', group: 'pantry'},
                                     { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'},
                                     { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
-                                ],
-                                option: 'bahmi',
-                                ingredients : [
-                                    { name: 'medium egg noodle', quantity: 8, unit: 'litres', group: 'pantry'},
-                                    { name: 'bahmi spice', quantity: 1, unit: 'cups', group: 'seasoning'},
-                                    { name: 'barbeque sauce', quantity: 1, unit: 'cups', group: 'pantry'},
-                                    { name: 'soy suace', quantity: 1, unit: 'cups', group: 'pantry'}
                                 ]
                             }],
                         vegetable: 
                             [{
-                                option: 'Spinach Medley',
+                                option: 'Sauteed Pepper and Onion',
                                 ingredients: [
-                                    { name: 'frozen spinach nugget', quantity: 10, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen red pepper', quantity: 4, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'canned mushrooms', quantity: 2, unit: 'cans', group: 'pantry'}
+                                    { name: 'frozen green pepper', quantity: 8, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen red pepper', quantity: 8, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen diced onion', quantity: 4, unit: 'kilograms', group: 'frozen'}
                                 ],
-                                option: 'Bahmi Goreng',
+                                option: 'Niagara Blend',
                                 ingredients: [
-                                    { name: 'frozen green pepper', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen diced onion', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'fresh green onion', quantity: 2, unit: 'bunches', group: 'produce'},
-                                    { name: 'fresh cabbage', quantity: 4.5, unit: 'kilograms', group: 'fresh'}
+                                    { name: 'frozen niagara blend', quantity: 10, unit: 'kilograms', group: 'frozen'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'mocha pudding with whipped cream',
+                                option: 'Chocolate pudding with whipped cream',
                                 ingredients: [
-                                    { name: 'vanilla pudding powder', quantity: 2, unit: 'bags', group: 'pantry'},
-                                    { name: 'decaf coffee', quantity: 1, unit: 'bag', group: 'pantry'},
+                                    { name: 'chocolate pudding powder', quantity: 2, unit: 'bags', group: 'pantry'},
                                     { name: 'milk', quantity: 4, unit: 'bags', group: 'dairy'},
                                     { name: 'whipped cream', quantity: 6, unit: 'bags', group: 'frozen'}
                                 ],
-                                option: 'apricot halves',
+                                option: 'Pineapple Tidbits',
                                 ingredients: [
-                                    { name: 'canned apricot halves', quantity: 3, unit: 'cans', group: 'pantry'}
+                                    { name: 'canned pineapple tidbits', quantity: 3, unit: 'cans', group: 'pantry'}
                                 ]
                             }],
                         salad:
@@ -117,7 +110,7 @@ async function seedDatabase() {
                                 option: 'tossed',
                                 ingredients: [
                                     { name: 'iceburg lettuce', quantity: 8, unit: 'heads', group: 'produce'},
-                                    { name: 'fresh green onion', quantity: 2, unit: 'bunches', group: 'produce'},
+                                    { name: 'fresh green onion', quantity: 1, unit: 'bunches', group: 'produce'},
                                     { name: 'fresh spinach', quantity: 0.25, unit: 'bags', group: 'produce'},
                                     { name: 'fresh red pepper', quantity: 2, unit: 'each', group: 'produce'},
                                     { name: 'fresh carrot', quantity: 3, unit: 'each', group: 'produce'}
@@ -129,53 +122,45 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{
-                                option: 'cod nugget',
+                                option: 'Beef and Pork Sausage',
                                 ingredients: [
-                                    { name: 'frozen cod nugget', quantity: 2, unit: 'boxes', group: 'frozen'},
-                                    { name: 'frozen blue cod', quantity: 1, unit: 'boxes', group: 'frozen'},
-                                    { name: 'tartar sauce', quantity: 4, unit: 'litres', group: 'pantry'}
+                                    { name: 'frozen beef and pork sausage', quantity: 3, unit: 'boxes', group: 'frozen'}
                                 ],
-                                option: 'Montreal Smoked Meat Sandwich',
+                                option: 'Turkey Parmesan on a Bun',
                                 ingredients: [
-                                    { name: 'sliced montreal smoked meat', quantity: 2, unit: 'boxes', group: 'fresh'},
+                                    { name: 'frozen turkey schnitzel', quantity: 3, unit: 'boxes', group: 'frozen'},
                                 ]
                             }],
                         starch:
                             [{
-                                option: 'Wild Rice',
+                                option: 'Hutspot',
                                 ingredients: [
-                                    { name: 'wild rice', quantity: 3, unit: 'boxes', group: 'pantry'}
+                                    { name: 'fresh diced potato', quantity: 2, unit: 'pots', group: 'produce'}
                                 ],
-                                option: 'montreal smoked meat sandwich',
+                                option: 'Hamburger Bun',
                                 ingredients: [
-                                    { name: 'whole wheat bread', quantity: 12, unit: 'loaves', group: 'fresh'},
+                                    { name: 'hamburger bun', quantity: 80, unit: 'each', group: 'fresh'},
                                     { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'},
                                     { name: 'margarine cups', quantity: 1, unit: 'box', group: 'fresh'}
                                 ]                            
                             }],
                         vegetable:
                             [{
-                                option: 'mexican mix',
+                                option: 'Hutspot',
                                 ingredients: [
-                                    { name: 'frozen red pepper', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen green pepper', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen corn', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen diced onion', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen zucchini', quantity: 2, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'frozen diced carrot', quantity: 4, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen diced onion', quantity: 4, unit: 'kilograms', group: 'frozen'}
                                 ],
-                                option: 'carrot salad',
+                                option: 'Diced Cucumber',
                                 ingredients: [
-                                    { name: 'frozen diced carrot', quantity: 8, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'mayonnaise', quantity: 1, unit: 'buckets', group: 'pantry'},
-                                    { name: 'plain yogurt', quantity: 1, unit: 'bags', group: 'fresh'},
-                                    { name: 'dill', quantity: 1, unit: 'each', group: 'seasoning'}
+                                    { name: 'fresh cucumber', quantity: 10, unit: 'each', group: 'produce'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'lime jello with whipped cream',
+                                option: 'Orange jello with whipped cream',
                                 ingredients: [
-                                    { name: 'lime jello powder', quantity: 1, unit: 'bags', group: 'pantry'},
+                                    { name: 'orange jello powder', quantity: 1, unit: 'bags', group: 'pantry'},
                                     { name: 'rainbow sorbet', quantity: 1, unit: 'each', group: 'frozen'},
                                     { name: 'whipped cream', quantity: 6, unit: 'bags', group: 'frozen'}
                                 ],
@@ -187,11 +172,13 @@ async function seedDatabase() {
                             }],
                         soup: 
                             [{
-                                option: 'cream of broccoli',
+                                option: 'Chicken and Rice Soup',
                                 ingredients: [
-                                    { name: 'cream of broccoli soup mix', quantity: 8, unit: 'bags', group: 'pantry'},
-                                    { name: 'frozen broccoli', quantity: 1, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen spinach nugget', quantity: 1, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen diced chicken', quantity: 1, unit: 'boxes', group: 'frozen'},
+                                    { name: 'frozen diced carrots', quantity: 1, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen diced onions', quantity: 1, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen diced celery', quantity: 1, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'brown rice', quantity: 1.5, unit: 'litres', group: 'pantry'},
                                     { name: 'flax flour', quantity: 3, unit: 'cups', group: 'pantry'},
                                     { name: 'red lentils', quantity: 4, unit: 'cups', group: 'pantry'}
                                 ]
@@ -212,10 +199,10 @@ async function seedDatabase() {
                             [{ option: 'whole wheat bread', 
                                 ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves', group: 'fresh' },
                                               { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'}],
-                                option: 'cinnamon bun',
+                                option: 'Lemon Cranberry Muffin',
                                 ingredients: [
-                                    { name: 'cinnamon bun', quantity: 30, unit: 'buns', group: 'frozen'},
-                                    { name: 'apple spice bread puree', quantity: 1, unit: 'rolls', group: 'frozen'}
+                                    { name: 'lemon cranberry muffin', quantity: 30, unit: 'each', group: 'frozen'},
+                                    { name: 'apple spice bread puree', quantity: 3, unit: 'rolls', group: 'frozen'}
                                 ],
                                 option: 'oatmeal',
                                 ingredients: [
@@ -237,52 +224,50 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{ 
-                                option: 'Taco Chili Topping', 
+                                option: 'Pineapple Chicken Thigh', 
                                 ingredients: [
-                                    { name: 'frozen ground beef', quantity: 4, unit: 'boxes', group: 'frozen' },
-                                    { name: 'canned black beans', quantity: 4, unit: 'litres', group: 'pantry' },
-                                    { name: 'canned kidney beans', quantity: 4, unit: 'litres', group: 'pantry' },
-                                    { name: 'canned beans in tomato sauce', quantity: 1.5, unit: 'litres', group: 'pantry' }
+                                    { name: 'Chicken Thigh', quantity: 6, unit: 'boxes', group: 'frozen' },
+                                    { name: 'frozen diced chicken', quantity: 2, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'canned pineapple tidbits', quantity: 1, unit: 'cans', group: 'pantry'},
                                 ]
                             },
                             {
-                                option: 'Turkey Schnitzel',
+                                option: 'Pepperoni Pizza',
                                 ingredients: [
-                                    { name: 'frozen turkey schnitzel', quantity: 3, unit: 'boxes', group: 'frozen'},
-                                    { name: 'frozen diced turkey', quantity: 1, unit: 'boxes', group: 'frozen'}
+                                    { name: 'frozen pepperoni pizza planks', quantity: 80, unit: 'each', group: 'frozen'}
                                 ]
                             }],
                         starch: 
                             [{
-                                option: 'Taco Chili Topping',
+                                option: 'mashed potatoes',
                                 ingredients: [
-                                    { name: 'sour cream', quantity: 1, unit: 'buckets', group: 'fresh'},
-                                    { name: 'shredded cheddar', quantity: 1, unit: 'bags', group: 'fresh'},
-                                    { name: 'salsa', quantity: 2, unit: 'bags', group: 'pantry'}
+                                    { name: 'instant mashed potato', quantity: 4, unit: 'bags', group: 'pantry'},
+                                    { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'},
+                                    { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
                                 ],
-                                option: 'Sweet Potato Mash',
+                                option: 'Pepperoni Pizza',
                                 ingredients : [
-                                    { name: 'fresh diced sweet potato', quantity: 6, unit: 'bags', group: 'fresh'}
+                                    { name: 'frozen pepperoni pizza planks', quantity: 20, unit: 'each', group: 'frozen'}
                                 ]
                             }],
                         vegetable: 
                             [{
-                                option: 'On a Bed of Lettuce',
+                                option: 'Asparagus Tips',
                                 ingredients: [
-                                    { name: 'fresh lettuce', quantity: 10, unit: 'heads', group: 'produce'},
-                                    { name: 'fresh tomato', quantity: 20, unit: 'each', group: 'produce'}
+                                    { name: 'frozen asparagus tips', quantity: 12, unit: 'kilograms', group: 'frozen'}
                                 ],
-                                option: 'Italian Blend',
+                                option: 'Dill Pickle Spears',
                                 ingredients: [
-                                    { name: 'frozen italian blend', quantity: 12, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'fresh dill pickle spears', quantity: 2, unit: 'buckets', group: 'fresh'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'Butterscotch Ice Cream',
+                                option: 'Vanilla Ice Cream',
                                 ingredients: [
-                                    { name: 'butterscotch ice cream cups', quantity: 12, unit: 'boxes', group: 'frozen'},
-                                    { name: 'butterscotch ice cream bulk', quantity: 2, unit: 'boxes', group: 'frozen'}
+                                    { name: 'vanilla ice cream', quantity: 12, unit: 'boxes', group: 'frozen'},
+                                    { name: 'vanilla ice cream bulk', quantity: 3, unit: 'boxes', group: 'frozen'},
+                                    { name: 'LF vanilla ice cream bulk', quantity: 1, unit: 'cartons', group: 'frozen'}
                                 ],
                                 option: 'sliced strawberries',
                                 ingredients: [
@@ -294,7 +279,7 @@ async function seedDatabase() {
                                 option: 'garden',
                                 ingredients: [
                                     { name: 'iceburg lettuce', quantity: 8, unit: 'heads', group: 'produce'},
-                                    { name: 'fresh green onion', quantity: 2, unit: 'bunches', group: 'produce'},
+                                    { name: 'fresh green onion', quantity: 1, unit: 'bunches', group: 'produce'},
                                     { name: 'fresh spinach', quantity: 0.25, unit: 'bags', group: 'produce'},
                                     { name: 'fresh cucumber', quantity: 2, unit: 'each', group: 'produce'},
                                     { name: 'fresh carrot', quantity: 3, unit: 'each', group: 'produce'},
@@ -307,35 +292,39 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{
-                                option: 'pulled pork poutine',
+                                option: 'Homemade Quiche Lorraine',
                                 ingredients: [
-                                    { name: 'frozen pulled pork', quantity: 2.5, unit: 'boxes', group: 'frozen'},
-                                    { name: 'barbecue sauce', quantity: 1, unit: 'jugs', group: 'pantry'}
+                                    { name: 'frozen liquid egg', quantity: 3, unit: 'bags', group: 'frozen'},
+                                    { name: 'frozen bacon bits', quantity: 2, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen diced onion', quantity: 2, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'shredded cheddar cheese', quantity: 1, unit: 'bags', group: 'fresh'}
                                 ],
-                                option: 'tuna salad sandwich',
+                                option: 'Corned Beef on Whole Wheat',
                                 ingredients: [
-                                    { name: 'tuna', quantity: 3, unit: 'pouches', group: 'pantry'},
+                                    { name: 'sliced corned beef', quantity: 3, unit: 'boxes', group: 'fresh'},
+                                    { name: 'swiss cheese', quantity: 1, unit: 'boxes', group: 'fresh'},
+                                    { name: 'sauerkraut', quantity: 1, unit: 'buckets', group: 'fresh'},
+
                                 ]
                             }],
                         starch:
                             [{
-                                option: 'french fries',
+                                option: 'Homemade Quiche Lorraine',
                                 ingredients: [
-                                    { name: 'frozen french fries', quantity: 4, unit: 'bags', group: 'frozen'},
-                                    { name: 'instant mashed potatoes', quantity: 1, unit: 'bags', group: 'pantry'}
+                                    { name: 'frozen pie shells', quantity: 15, unit: 'each', group: 'frozen'}
                                 ],
-                                option: 'tuna salad sandwich',
+                                option: 'Corned Beef on Whole Wheat',
                                 ingredients: [
                                     { name: 'whole wheat bread', quantity: 12, unit: 'loaves', group: 'fresh'},
                                     { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'},
-                                    { name: 'margarine cups', quantity: 0.5, unit: 'box', group: 'fresh'}
+                                    { name: 'margarine cups', quantity: 1, unit: 'box', group: 'fresh'}
                                 ]                            
                             }],
                         vegetable:
                             [{
-                                option: 'dill pickle slices',
+                                option: 'Cantaloupe',
                                 ingredients: [
-                                    { name: 'fresh sliced pickles', quantity: 2, unit: 'buckets', group: 'fresh'}
+                                    { name: 'fresh diced cantaloupe', quantity: 5, unit: 'buckets', group: 'fresh'}
                                 ],
                                 option: 'bean salad',
                                 ingredients: [
@@ -344,9 +333,9 @@ async function seedDatabase() {
                             }],
                         dessert:
                             [{
-                                option: 'raspberry mousse',
+                                option: 'peach mousse',
                                 ingredients: [
-                                    { name: 'raspberry mousse powder', quantity: 2, unit: 'bags', group: 'pantry'},
+                                    { name: 'peach mousse powder', quantity: 2, unit: 'bags', group: 'pantry'},
                                     { name: 'milk', quantity: 2, unit: 'bags', group: 'dairy'}
                                 ],
                                 option: 'fresh orange',
@@ -357,14 +346,9 @@ async function seedDatabase() {
                             }],
                         soup: 
                             [{
-                                option: 'harvest tomato vegetable',
+                                option: 'Tomato Bisque',
                                 ingredients: [
-                                    { name: 'harvest tomato vegetable soup mix', quantity: 8, unit: 'bags', group: 'pantry'},
-                                    { name: 'frozen diced carrots', quantity: 1.5, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen diced celery', quantity: 1.5, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen diced onion', quantity: 1.5, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'flax flour', quantity: 3, unit: 'cups', group: 'pantry'},
-                                    { name: 'barley', quantity: 4, unit: 'cups', group: 'pantry'}
+                                    { name: 'frozen tomato bisque', quantity: 4, unit: 'boxes', group: 'frozen'}
                                 ]
                             }]
                     }
@@ -377,7 +361,7 @@ async function seedDatabase() {
                         protein: 
                             [{ option: 'scrambled egg with bacon and cheese', 
                                 ingredients: [
-                                    { name: 'frozen bacon bits', quantity: 1, unit: 'bags', group: 'frozen'},
+                                    { name: 'frozen bacon bits', quantity: 1, unit: 'bags', group: 'frozen' },
                                     { name: 'frozen liquid egg', quantity: 5, unit: 'bags', group: 'frozen' },
                                     { name: 'shredded cheddar cheese', quantity: 1, unit: 'bags', group: 'fresh'}
                                 ]
@@ -411,59 +395,57 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{ 
-                                option: 'herbed salmon', 
+                                option: 'Dutch Meatloaf', 
                                 ingredients: [
-                                    { name: 'frozen salmon filets', quantity: 4, unit: 'boxes', group: 'frozen'},
-                                    { name: 'salmon seasoning', quantity: 1, unit: 'container', group: 'seasoning'}
+                                    { name: 'frozen ground beef', quantity: 32, unit: 'lbs', group: 'frozen' },
+                                    { name: 'gehakt seasoning', quantity: 1, unit: 'container', group: 'seasoning'},
+                                    { name: 'beef broth concentrate', quantity: 1, unit: 'container', group: 'pantry'},
+                                    { name: 'panko breadcrumbs', quantity: 1, unit: 'bags', group: 'pantry'},
+                                    { name: 'fresh egg', quantity: 32, unit: 'each', group: 'fresh'}
+
                                 ]
                             },
                             {
-                                option: 'Hamburger On A Bun',
+                                option: 'Butter Chicken',
                                 ingredients: [
-                                    { name: 'frozen steakettes', quantity: 100, unit: 'each', group: 'frozen'},
-                                    { name: 'hamburger bun', quantity: 80, unit: 'each', group: 'fresh'},
-                                    { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'}
+                                    { name: 'frozen diced chicken', quantity: 10, unit: 'kilograms', group: 'frozen'}
                                 ]
                             }],
                         starch: 
                             [{
-                                option: 'Mashed Potato',
+                                option: 'Scalloped Potato',
                                 ingredients: [
-                                    { name: 'instant mashed potato', quantity: 4, unit: 'bags', group: 'pantry'},
-                                    { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'},
-                                    { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
+                                    { name: 'scalloped potato', quantity: 4, unit: 'boxes', group: 'pantry'}
                                 ],
-                                option: 'Macaroni Salad',
+                                option: 'Jasmine Rice',
                                 ingredients : [
-                                    { name: 'fresh red pepper', quantity: 3, unit: 'each', group: 'produce'},
-                                    { name: 'fresh green pepper', quantity: 3, unit: 'each', group: 'produce'},
-                                    { name: 'fresh green onion', quantity: 3, unit: 'bunches', group: 'produce'},
-                                    { name: 'fresh carrot', quantity: 3, unit: 'each', group: 'produce'}
+                                    { name: 'jasmine rice', quantity: 3, unit: 'litres', group: 'pantry'}
                                 ]
                             }],
                         vegetable: 
                             [{
-                                option: 'Brown Sugar Glazed Carrots',
+                                option: 'Creamed Spinach',
                                 ingredients: [
-                                    { name: 'frozen diced carrots', quantity: 16, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'frozen spinach nugget', quantity: 20, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'milk', quantity: 4, unit: 'litres', group: 'dairy'},
+                                    { name: 'nutmeg', quantity: 1, unit: 'each', group: 'seasoning'}
                                 ],
-                                option: 'Tomato & Onion',
+                                option: 'Green Peas',
                                 ingredients: [
-                                    { name: 'fresh sliced tomato', quantity: 2, unit: 'buckets', group: 'produce'},
-                                    { name: 'fresh diced onion', quantity: 2, unit: 'buckets', group: 'produce'}
+                                    { name: 'frozen peas', quantity: 8, unit: 'kilograms', group: 'frozen'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'lemon pudding with whipped cream',
+                                option: 'butterscotch pudding with whipped cream',
                                 ingredients: [
-                                    { name: 'lemon pudding powder', quantity: 2, unit: 'bags', group: 'pantry'},
+                                    { name: 'butterscotch pudding powder', quantity: 2, unit: 'bags', group: 'pantry'},
                                     { name: 'milk', quantity: 4, unit: 'bags', group: 'dairy'},
                                     { name: 'whipped cream', quantity: 6, unit: 'bags', group: 'frozen'}
                                 ],
-                                option: 'peaches',
+                                option: 'Fruit Salad',
                                 ingredients: [
-                                    { name: 'canned peaches', quantity: 3, unit: 'cans', group: 'pantry'}
+                                    { name: 'fresh fruit salad', quantity: 3, unit: 'buckets', group: 'fresh'}
                                 ]
                             }],
                         salad:
@@ -471,7 +453,7 @@ async function seedDatabase() {
                                 option: 'tossed',
                                 ingredients: [
                                     { name: 'iceburg lettuce', quantity: 8, unit: 'heads', group: 'produce'},
-                                    { name: 'fresh green onion', quantity: 2, unit: 'bunches', group: 'produce'},
+                                    { name: 'fresh green onion', quantity: 1, unit: 'bunches', group: 'produce'},
                                     { name: 'fresh spinach', quantity: 0.25, unit: 'bags', group: 'produce'},
                                     { name: 'fresh red pepper', quantity: 2, unit: 'each', group: 'produce'},
                                     { name: 'fresh carrot', quantity: 3, unit: 'each', group: 'produce'}
@@ -483,50 +465,51 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{
-                                option: 'chicken wings',
+                                option: 'Mushroom Pork Chops',
                                 ingredients: [
-                                    { name: 'frozen chicken strips', quantity: 3, unit: 'boxes', group: 'frozen'},
-                                    { name: 'frozen diced chicken', quantity: 1, unit: 'boxes', group: 'frozen'},
-                                    { name: 'barbecue sauce', quantity: 2, unit: 'jugs', group: 'pantry'}
+                                    { name: 'frozen pork chops', quantity: 2, unit: 'boxes', group: 'frozen'},
+                                    { name: 'frozen diced pork', quantity: 1, unit: 'boxes', group: 'frozen'},
+                                    { name: 'canned cream of mushroom soup', quantity: 2, unit: 'cans', group: 'pantry'}
                                 ],
-                                option: 'black forest ham sandwich',
+                                option: 'Pollock Fish Soft Taco',
                                 ingredients: [
-                                    { name: 'sliced black forest ham', quantity: 2, unit: 'boxes', group: 'fresh'},
+                                    { name: 'frozen pollock fingers', quantity: 2, unit: 'boxes', group: 'frozen'},
                                 ]
                             }],
                         starch:
                             [{
-                                option: 'Roasted Potato',
+                                option: 'Mashed Potato',
                                 ingredients: [
-                                    { name: 'frozen diced potatoes', quantity: 4, unit: 'bags', group: 'frozen'},
-                                    { name: 'instant mashed potato', quantity: 4, unit: 'bags', group: 'pantry'},
+                                    { name: 'instant mashed potato', quantity: 3, unit: 'bags', group: 'pantry'},
                                     { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'},
                                     { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
                                 ],
-                                option: 'black forest ham sandwich',
+                                option: 'Tortilla',
                                 ingredients: [
-                                    { name: 'whole wheat bread', quantity: 12, unit: 'loaves', group: 'fresh'},
-                                    { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'},
-                                    { name: 'margarine cups', quantity: 1, unit: 'box', group: 'fresh'}
+                                    { name: 'small tortilla', quantity: 14, unit: 'packs', group: 'fresh'},
+                                    { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'}
                                 ]                            
                             }],
                         vegetable:
                             [{
-                                option: 'Creamy Coleslaw',
+                                option: 'fall medley',
                                 ingredients: [
-                                    { name: 'fresh creamy coleslaw', quantity: 4, unit: 'buckets', group: 'fresh'}
+                                    { name: 'frozen turnips', quantity: 3, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen parsnips', quantity: 3, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen diced carrot', quantity: 3, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'fresh sweet potato', quantity: 3, unit: 'kilograms', group: 'fresh'},
                                 ],
-                                option: 'Dill Pickle Spears',
+                                option: 'Oil & Vinegar Coleslaw',
                                 ingredients: [
-                                    { name: 'fresh dill pickle spears', quantity: 2, unit: 'buckets', group: 'fresh'}
+                                    { name: 'fresh oil and vinegar coleslaw', quantity: 4, unit: 'buckets', group: 'fresh'},
+                                    { name: 'salsa', quantity: 4, unit: 'kilograms', group: 'pantry'},
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'Nanaimo Bar',
+                                option: 'Lemon Bar',
                                 ingredients: [
-                                    { name: 'frozen brownie', quantity: 1, unit: 'slabs', group: 'frozen'},
-                                    { name: 'frozen nanaimo bar', quantity: 3, unit: 'slabs', group: 'frozen'}
+                                    { name: 'frozen lemon bar', quantity: 4, unit: 'slabs', group: 'frozen'}
                                 ],
                                 option: 'fresh apple',
                                 ingredients: [
@@ -536,9 +519,9 @@ async function seedDatabase() {
                             }],
                         soup: 
                             [{
-                                option: 'dutch meatball',
+                                option: 'Turkey Noodle Soup',
                                 ingredients: [
-                                    { name: 'frozen meatballs', quantity: 1, unit: 'boxes', group: 'frozen'},
+                                    { name: 'frozen diced turkey', quantity: 1, unit: 'boxes', group: 'frozen'},
                                     { name: 'frozen diced carrot', quantity: 2, unit: 'kilograms', group: 'frozen'},
                                     { name: 'frozen diced celery', quantity: 2, unit: 'kilograms', group: 'frozen'},
                                     { name: 'frozen diced onion', quantity: 2, unit: 'kilograms', group: 'frozen'},
@@ -555,12 +538,12 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{ option: 'soft boiled egg', 
-                                ingredients: [{ name: 'fresh egg', quantity: 90, unit: 'each', group: 'fresh'},
-                                              { name: 'frozen liquid egg', quantity: 2, unit: 'bags', group: 'frozen'}]
+                                ingredients: [{ name: 'fresh egg', quantity: 90, unit: 'each', group: 'fresh' },
+                                              { name: 'frozen liquid egg', quantity: 2, unit: 'bags', group: 'frozen' }]
                             }],
                         starch:
                             [{ option: 'whole wheat bread', 
-                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves', group: 'fresh'},
+                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves', group: 'fresh' },
                                               { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'}],
                                 option: 'raisin bread',
                                 ingredients: [
@@ -577,7 +560,7 @@ async function seedDatabase() {
                             [{ 
                                 option: 'banana',
                                 ingredients: [
-                                    { name: 'fresh banana', quantity: 50, unit: 'each', group: 'fresh'},
+                                    { name: 'fresh banana', quantity: 50, unit: 'each', group: 'produce'},
                                     { name: 'banana puree', quantity: 3, unit: 'bags', group: 'pantry'}
                                 ]
                             }]
@@ -587,58 +570,58 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{ 
-                                option: 'smoked sausage', 
+                                option: 'Krunchy Haddock', 
                                 ingredients: [
-                                    { name: 'frozen smoked sausage', quantity: 11, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'frozen krunchy haddock filets', quantity: 4, unit: 'boxes', group: 'frozen' },
+                                    { name: 'tartar sauce', quantity: 2, unit: 'jugs', group: 'pantry'},
                                 ]
                             },
                             {
-                                option: 'Cottage cheese',
+                                option: 'Beef Macaroni',
                                 ingredients: [
-                                    { name: 'fresh cottage cheese', quantity: 3, unit: 'buckets', group: 'fresh'}
+                                    { name: 'frozen italian meatballs', quantity: 2, unit: 'boxes', group: 'frozen'}
                                 ]
                             }],
                         starch: 
                             [{
-                                option: 'Boerenkool',
+                                option: 'Roasted Potato',
                                 ingredients: [
-                                    { name: 'fresh potato', quantity: 2.5, unit: 'pots', group: 'produce'}
+                                    { name: 'frozen diced potato', quantity: 4, unit: 'bags', group: 'frozen'}
                                 ],
-                                option: 'Banana Bread',
+                                option: 'Beef Macaroni',
                                 ingredients : [
-                                    { name: 'flour', quantity: 3, unit: 'litres', group: 'pantry'},
-                                    { name: 'sugar', quantity: 2, unit: 'litres', group: 'pantry'},
-                                    { name: 'puree banana', quantity: 3, unit: 'litres', group: 'pantry'},
-                                    { name: 'margarine', quantity: 4.5, unit: 'cups', group: 'fresh'},
-                                    { name: 'fresh eggs', quantity: 12, unit: 'each', group: 'fresh'}
+                                    { name: 'macaroni noodles', quantity: 2, unit: 'bags', group: 'pantry'}
                                 ]
                             }],
                         vegetable: 
                             [{
-                                option: 'Boerenkool',
+                                option: 'PEI Mix',
                                 ingredients: [
-                                    { name: 'kale', quantity: 9, unit: 'cans', group: 'pantry'}
+                                    { name: 'frozen diced carrot', quantity: 5, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen green bean', quantity: 5, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen wax bean', quantity: 5, unit: 'kilograms', group: 'frozen'}
                                 ],
-                                option: 'Cantaloupe',
+                                option: 'Beef Macaroni',
                                 ingredients: [
-                                    { name: 'fresh cantaloupe melon', quantity: 4, unit: 'buckets', group: 'fresh'}
+                                    { name: 'canned mushrooms', quantity: 1, unit: 'cans', group: 'pantry'},
+                                    { name: 'canned tomato sauce', quantity: 2, unit: 'cans', group: 'pantry'},
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'yogurt with Blueberry sauce',
+                                option: 'yogurt with cherry sauce',
                                 ingredients: [
                                     { name: 'vanilla yogurt', quantity: 8, unit: 'bags', group: 'fresh'},
-                                    { name: 'blueberry pie filling', quantity: 1, unit: 'buckets', group: 'fresh'}
+                                    { name: 'cherry pie filling', quantity: 1, unit: 'buckets', group: 'fresh'}
                                 ],
-                                option: 'Cherries',
+                                option: 'Sliced Strawberries',
                                 ingredients: [
-                                    { name: 'frozen cherries', quantity: 4, unit: 'bags', group: 'frozen'}
+                                    { name: 'fresh strawberries', quantity: 1, unit: 'flat', group: 'fresh'}
                                 ]
                             }],
                         salad:
                             [{
-                                option: 'tossed',
+                                option: 'garden',
                                 ingredients: [
                                     { name: 'iceburg lettuce', quantity: 8, unit: 'heads', group: 'produce'},
                                     { name: 'fresh green onion', quantity: 1, unit: 'bunches', group: 'produce'},
@@ -653,56 +636,54 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{
-                                option: 'italian meatballs',
+                                option: 'Chicken Fingers',
                                 ingredients: [
-                                    { name: 'frozen ground beef', quantity: 15, unit: 'kilograms', group: 'fresh'},
-                                    { name: 'panko breadcrumbs', quantity: 1, unit: 'bags', group: 'pantry'},
-                                    { name: 'fresh egg', quantity: 15, unit: 'each', group: 'fresh'},
-                                    { name: 'beef broth concentrate', quantity: 0.25, unit: 'boxes', group: 'pantry'}
+                                    { name: 'frozen chicken strips', quantity: 3, unit: 'boxes', group: 'frozen'},
+                                    { name: 'plum sauce', quantity: 1, unit: 'jugs', group: 'pantry'}
                                 ],
-                                option: 'smoked turkey Wrap',
+                                option: 'Liverworst',
                                 ingredients: [
-                                    { name: 'sliced smoked turkey', quantity: 2, unit: 'boxes', group: 'fresh'},
+                                    { name: 'fresh liverworst', quantity: 3, unit: 'rolls', group: 'fresh'},
                                 ]
                             }],
                         starch:
                             [{
-                                option: 'mashed potatoes',
+                                option: 'Potato salad',
                                 ingredients: [
-                                    { name: 'instant mashed potato', quantity: 4, unit: 'bags', group: 'pantry'},
-                                    { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'},
-                                    { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
+                                    { name: 'fresh diced potatoes', quantity: 2, unit: 'pots', group: 'produce'},
+                                    { name: 'hard boiled egg', quantity: 13, unit: 'each', group: 'fresh'},
+                                    { name: 'fresh red pepper', quantity: 3, unit: 'each', group: 'produce'},
+                                    { name: 'fresh green pepper', quantity: 3, unit: 'each', group: 'produce'},
+                                    { name: 'fresh green onion', quantity: 3, unit: 'bunches', group: 'produce'},
+                                    { name: 'fresh carrot', quantity: 3, unit: 'each', group: 'produce'},
+                                    { name: 'mayonnaise', quantity: 4, unit: 'litres', group: 'pantry'}
                                 ],
-                                option: 'smoked turkey wrap',
+                                option: 'Liverworst sandwich',
                                 ingredients: [
-                                    { name: 'whole wheat tortillas', quantity: 80, unit: 'each', group: 'frozen'},
-                                    { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'fresh'},
+                                    { name: 'whole wheat bread', quantity: 12, unit: 'loaves', group: 'fresh'},
+                                    { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'},
                                     { name: 'margarine cups', quantity: 1, unit: 'box', group: 'fresh'}
                                 ]                            
                             }],
                         vegetable:
                             [{
-                                option: 'Peas and Carrots',
+                                option: 'California Mix',
                                 ingredients: [
-                                    { name: 'frozen peas', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen diced carrots', quantity: 2, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'frozen broccoli', quantity: 2, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen cauliflower', quantity: 2, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen diced carrot', quantity: 2, unit: 'kilograms', group: 'frozen'}
                                 ],
-                                option: 'creamy beet salad',
+                                option: 'Pickled Beets',
                                 ingredients: [
-                                    { name: 'canned diced beets', quantity: 3, unit: 'cans', group: 'pantry'},
-                                    { name: 'mayonnaise', quantity: 1, unit: 'buckets', group: 'pantry'},
-                                    { name: 'sugar', quantity: 1, unit: 'bags', group: 'pantry'},
-                                    { name: 'vinegar', quantity: 1, unit: 'each', group: 'pantry'},
-                                    { name: 'fresh red onion', quantity: '1', unit: 'each', group: 'fresh'}
+                                    { name: 'canned pickled beets', quantity: 2, unit: 'cans', group: 'pantry'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'vanilla pudding with whipped cream',
+                                option: 'Raspberry Jello',
                                 ingredients: [
-                                    { name: 'vanilla pudding powder', quantity: 2, unit: 'bags', group: 'pantry'},
-                                    { name: 'milk', quantity: 3, unit: 'bags', group: 'dairy'},
-                                    { name: 'whipped cream', quantity: 6, unit: 'bags', group: 'frozen'}
+                                    { name: 'raspberry jello powder', quantity: 1, unit: 'bags', group: 'pantry'},
+                                    { name: 'frozen rainbow sorbet', quantity: 3, unit: 'each', group: 'frozen'}
                                 ],
                                 option: 'Fresh Pear',
                                 ingredients: [
@@ -712,15 +693,15 @@ async function seedDatabase() {
                             }],
                         soup: 
                             [{
-                                option: 'Chicken Noodle Soup',
+                                option: 'Dutch Meatball',
                                 ingredients: [
-                                    { name: 'frozen diced chicken', quantity: 1, unit: 'boxes', group: 'frozen'},
+                                    { name: 'frozen italian meatballs', quantity: 1, unit: 'boxes', group: 'frozen'},
                                     { name: 'frozen diced carrot', quantity: 2, unit: 'kilograms', group: 'frozen'},
                                     { name: 'frozen diced onion', quantity: 2, unit: 'kilograms', group: 'frozen'},
                                     { name: 'frozen diced celery', quantity: 2, unit: 'kilograms', group: 'frozen'},
                                     { name: 'flax flour', quantity: 3, unit: 'cups', group: 'pantry'},
                                     { name: 'barley', quantity: 4, unit: 'cups', group: 'pantry'},
-                                    { name: 'chicken broth concentrate', quantity: 1, unit: 'boxes', group: 'pantry'},
+                                    { name: 'beef broth concentrate', quantity: 1, unit: 'boxes', group: 'pantry'},
                                     { name: 'egg noodles', quantity: 1, unit: 'boxes', group: 'pantry'}
                                 ]
                             }]
@@ -733,12 +714,12 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{ option: 'soft boiled egg', 
-                                ingredients: [{ name: 'fresh egg', quantity: 90, unit: 'each', group: 'fresh'},
-                                              { name: 'frozen liquid egg', quantity: 2, unit: 'bags', group: 'frozen'}]
+                                ingredients: [{ name: 'fresh egg', quantity: 90, unit: 'each', group: 'fresh' },
+                                              { name: 'frozen liquid egg', quantity: 2, unit: 'bags', group: 'frozen' }]
                             }],
                         starch:
                             [{ option: 'whole wheat bread', 
-                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves', group: 'fresh'},
+                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves', group: 'fresh' },
                                               { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'}],
                                 option: 'raisin bread',
                                 ingredients: [
@@ -747,8 +728,8 @@ async function seedDatabase() {
                                 ],
                                 option: 'cream of wheat',
                                 ingredients: [
-                                    { name: 'wheatlets', quantity: 6, unit: 'litres', group: 'fresh'},
-                                    { name: 'flax flour', quantity: 3, unit: 'cups', group: 'fresh'}
+                                    { name: 'wheatlets', quantity: 6, unit: 'litres', group: 'pantry'},
+                                    { name: 'flax flour', quantity: 3, unit: 'cups', group: 'pantry'}
                                 ]
                             }],
                         vegetable:
@@ -765,55 +746,55 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{ 
-                                option: 'Honey Garlic Chicken Stir Fry', 
+                                option: 'BBQ Ribette', 
                                 ingredients: [
-                                    { name: 'frozen diced chicken', quantity: 2, unit: 'boxes', group: 'frozen'},
-                                    { name: 'honey garlic sauce', quantity: 2, unit: 'jugs', group: 'pantry'},
-
+                                    { name: 'frozen ribette', quantity: 4, unit: 'boxes', group: 'frozen' }
                                 ]
                             },
                             {
-                                option: 'baked ham',
+                                option: 'Chicken Alfredo w/ Peppers',
                                 ingredients: [
-                                    { name: 'fresh ham roast', quantity: 3, unit: 'each', group: 'fresh'}
+                                    { name: 'frozen diced chicken', quantity: 2, unit: 'boxes', group: 'frozen'}
                                 ]
                             }],
                         starch: 
                             [{
-                                option: 'Brown Rice',
+                                option: 'Mashed Potatoes',
                                 ingredients: [
-                                    { name: 'brown rice', quantity: 4, unit: 'litres', group: 'pantry'},
                                     { name: 'instant mashed potato', quantity: 4, unit: 'bags', group: 'pantry'},
                                     { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'},
                                     { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
                                 ],
-                                option: 'Scalloped potatoes',
+                                option: 'Chicken Alfredo',
                                 ingredients: [
-                                    { name: 'scalloped potato', quantity: 4, unit: 'boxes', group: 'pantry'},
-                                    { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'}
+                                    { name: 'penne noodles', quantity: 2, unit: 'bags', group: 'pantry'}
                                 ]
                             }],
                         vegetable: 
                             [{
-                                option: 'Honey Garlic Chicken Stir Fry',
+                                option: 'Roasted Squash',
                                 ingredients: [
-                                    { name: 'frozen stir fry', quantity: 12, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'fresh butternut squash', quantity: 20, unit: 'kilograms', group: 'fresh'}
                                 ],
-                                option: 'corn',
+                                option: 'Chicken Alfredo w/ Peppers',
                                 ingredients: [
-                                    { name: 'frozen corn', quantity: 10, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'frozen green pepper', quantity: 2, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen red pepper', quantity: 2, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen diced onion', quantity: 2, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'alfredo sauce', quantity: 2, unit: 'jugs', group: 'pantry'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'chocolate ice cream',
+                                option: 'Strawberry Ice Cream ',
                                 ingredients: [
-                                    { name: 'chocolate ice cream cups', quantity: 12, unit: 'boxes', group: 'frozen'},
-                                    { name: 'chocolate ice cream bulk', quantity: 2, unit: 'boxes', group: 'frozen'}
+                                    { name: 'strawberry ice cream cups', quantity: 12, unit: 'boxes', group: 'frozen'},
+                                    { name: 'strawberry ice cream bulk', quantity: 2, unit: 'boxes', group: 'frozen'},
+                                    { name: 'LF strawberry ice cream bulk', quantity: 2, unit: 'boxes', group: 'frozen'}
                                 ],
-                                option: 'Fruit Cocktail',
+                                option: 'apricot halves',
                                 ingredients: [
-                                    { name: 'canned fruit cocktail', quantity: 3, unit: 'cans', group: 'pantry'}
+                                    { name: 'canned apricot halves', quantity: 3, unit: 'cans', group: 'pantry'}
                                 ]
                             }],
                         salad:
@@ -821,7 +802,7 @@ async function seedDatabase() {
                                 option: 'tossed',
                                 ingredients: [
                                     { name: 'iceburg lettuce', quantity: 8, unit: 'heads', group: 'produce'},
-                                    { name: 'fresh green onion', quantity: 1, unit: 'bunches', group: 'produce'},
+                                    { name: 'fresh green onion ', quantity: 1, unit: 'bunches', group: 'produce'},
                                     { name: 'fresh spinach', quantity: 0.25, unit: 'bags', group: 'produce'},
                                     { name: 'fresh red pepper', quantity: 2, unit: 'each', group: 'produce'},
                                     { name: 'fresh carrot', quantity: 3, unit: 'each', group: 'produce'}
@@ -833,15 +814,16 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{
-                                option: 'krunchy perch',
+                                option: 'Salisbury Steak',
                                 ingredients: [
-                                    { name: 'frozen krunchy perch', quantity: 2, unit: 'boxes', group: 'frozen'},
-                                    { name: 'frozen blue cod', quantity: 1, unit: 'boxes', group: 'frozen'},
-                                    { name: 'tartar sauce', quantity: 4, unit: 'litres', group: 'pantry'}
+                                    { name: 'frozen steakettes', quantity: 3, unit: 'boxes', group: 'frozen'}
                                 ],
-                                option: 'roast beef sandwich',
+                                option: 'chicken salad',
                                 ingredients: [
-                                    { name: 'sliced roast beef', quantity: 2, unit: 'boxes', group: 'fresh'},
+                                    { name: 'frozen diced chicken', quantity: 1, unit: 'boxes', group: 'frozen'},
+                                    { name: 'fresh diced celery', quantity: 1, unit: 'cups', group: 'fresh'},
+                                    { name: 'fresh onion', quantity: 1, unit: 'cups', group: 'produce'},
+                                    { name: 'mayonnaise', quantity: 1, unit: 'tubs', group: 'pantry'},
                                 ]
                             }],
                         starch:
@@ -852,33 +834,34 @@ async function seedDatabase() {
                                     { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'},
                                     { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
                                 ],
-                                option: 'Onion Bun',
+                                option: 'Dinner Roll',
                                 ingredients: [
-                                    { name: 'onion bun', quantity: 80, unit: 'each', group: 'fresh'},
+                                    { name: 'frozen dinner rolls', quantity: 80, unit: 'each', group: 'frozen'},
                                     { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'},
                                     { name: 'margarine cups', quantity: 1, unit: 'box', group: 'fresh'}
                                 ]                            
                             }],
                         vegetable:
                             [{
-                                option: 'brussels sprouts',
+                                option: 'Creamed Turnip',
                                 ingredients: [
-                                    { name: 'frozen brussels sprouts', quantity: 6, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'frozen diced turnip', quantity: 6, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'milk', quantity: 4, unit: 'litres', group: 'dairy'},
                                 ],
                                 option: 'balsamic tomato and cucumber salad',
                                 ingredients: [
-                                    { name: 'fresh tomato', quantity: 25, unit: 'each', group: 'produce'},
-                                    { name: 'fresh cucumber', quantity: 12, unit: 'each', group: 'produce'},
-                                    { name: 'fresh onion', quantity: 6, unit: 'each', group: 'produce'},
+                                    { name: 'fresh tomato', quantity: 4, unit: 'litres', group: 'produce'},
+                                    { name: 'fresh cucumber', quantity: 4, unit: 'litres', group: 'produce'},
+                                    { name: 'fresh onion', quantity: 2, unit: 'litres', group: 'produce'},
                                     { name: 'balsamic dressing', quantity: 1, unit: 'each', group: 'pantry'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'strawberry jello with whipped cream',
+                                option: 'Vanilla Pudding with whipped cream',
                                 ingredients: [
-                                    { name: 'strawberry jello powder', quantity: 1, unit: 'bags', group: 'pantry'},
-                                    { name: 'rainbow sorbet', quantity: 1, unit: 'each', group: 'frozen'},
+                                    { name: 'vanilla pudding powder', quantity: 1, unit: 'bags', group: 'pantry'},
+                                    { name: 'milk', quantity: 13.5, unit: 'litres', group: 'dairy'},
                                     { name: 'whipped cream', quantity: 6, unit: 'bags', group: 'frozen'}
                                 ],
                                 option: 'banana',
@@ -889,9 +872,9 @@ async function seedDatabase() {
                             }],
                         soup: 
                             [{
-                                option: 'vegetable florentine',
+                                option: 'Cream of Leek',
                                 ingredients: [
-                                    { name: 'vegetable florentine soup mix', quantity: 8, unit: 'bags', group: 'pantry'},
+                                    { name: 'cream of potato leek soup mix', quantity: 8, unit: 'bags', group: 'pantry'},
                                     { name: 'frozen diced carrot', quantity: 1.5, unit: 'kilograms', group: 'frozen'},
                                     { name: 'frozen diced onion', quantity: 1.5, unit: 'kilograms', group: 'frozen'},
                                     { name: 'frozen diced celery', quantity: 1.5, unit: 'kilograms', group: 'frozen'},
@@ -907,13 +890,13 @@ async function seedDatabase() {
                 breakfast: [{
                     components: {
                         protein: 
-                            [{ option: 'Cheese Omelette', 
-                                ingredients: [{ name: 'cheese omelette', quantity: 90, unit: 'each', group: 'frozen'},
-                                              { name: 'frozen liquid egg', quantity: 1, unit: 'bags', group: 'frozen'}]
+                            [{ option: 'Western Omelette', 
+                                ingredients: [{ name: 'western omelette', quantity: 110, unit: 'each', group: 'frozen' },
+                                              { name: 'frozen liquid egg', quantity: 1, unit: 'bags', group: 'frozen' }]
                             }],
                         starch:
                             [{ option: 'whole wheat bread', 
-                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves', group: 'fresh'},
+                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves', group: 'fresh' },
                                               { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'}],
                                 option: 'raisin bread',
                                 ingredients: [
@@ -940,61 +923,57 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{ 
-                                option: 'croquette', 
+                                option: 'Chicken Pot Pie', 
                                 ingredients: [
-                                    { name: 'frozen croquette', quantity: 3, unit: 'boxes', group: 'frozen'},
-                                    { name: 'frozen ground beef', quantity: 7.5, unit: 'lbs', group: 'frozen'}
+                                    { name: 'frozen chicken pot pie', quantity: 3, unit: 'boxes', group: 'frozen' }
                                 ]
                             },
                             {
-                                option: 'sweet and sour chicken',
+                                option: 'Nasi Goreng',
                                 ingredients: [
-                                    { name: 'frozen diced chicken', quantity: 5.5, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'frozen bacon bits', quantity: 3, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen egg patty', quantity: 70, unit: 'each', group: 'frozen'},
+                                    
                                 ]
                             }],
                         starch: 
                             [{
-                                option: 'mashed potatoes',
+                                option: 'Chicken Pot Pie',
                                 ingredients: [
-                                    { name: 'instant mashed potato', quantity: 3, unit: 'bags', group: 'pantry'},
-                                    { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'},
-                                    { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
+                                    { name: 'frozen chicken pot pie', quantity: 2, unit: 'boxes', group: 'frozen' }
                                 ],
-                                option: 'jasmine rice',
+                                option: 'Nasi Goreng',
                                 ingredients : [
-                                    { name: 'jasmine rice', quantity: 8, unit: 'litres', group: 'pantry'},
-                                    { name: 'instant mashed potato', quantity: 1, unit: 'bags', group: 'pantry'},
-                                    { name: 'margarine', quantity: 1, unit: 'cups', group: 'fresh'},
-                                    { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
+                                    { name: 'rice pilaf', quantity: 4, unit: 'kilograms', group: 'pantry'},
+                                    { name: 'soy sauce', quantity: 1, unit: 'cups', group: 'pantry'},
+                                    { name: 'nasi seasoning', quantity: 3, unit: 'cups', group: 'seasoning'},
                                 ]
                             }],
                         vegetable: 
                             [{
-                                option: 'harvard beets',
+                                option: 'Oriental Mix',
                                 ingredients: [
-                                    { name: 'canned diced beets', quantity: 18.7, unit: 'kilograms', group: 'pantry'},
-                                    { name: 'brown sugar', quantity: 2.75, unit: 'cups', group: 'pantry'},
-                                    { name: 'vinegar', quantity: 2.75, unit: 'cups', group: 'pantry'},
-                                    { name: 'spices', quantity: 1, unit: 'each', group: 'seasoning'}
+                                    { name: 'frozen stir fry vegetables', quantity: 12, unit: 'kilograms', group: 'frozen'}
                                 ],
-                                option: 'sweet and sour chicken',
+                                option: 'Nasi Goreng',
                                 ingredients: [
-                                    { name: 'frozen red pepper', quantity: 4, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen green pepper', quantity: 4, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen diced onion', quantity: 4, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'frozen green peppers', quantity: 3, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen red peppers', quantity: 3, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'frozen diced onions', quantity: 3, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'fresh green onion', quantity: 1, unit: 'cups', group: 'produce'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'rice pudding with whipped cream',
+                                option: 'banana pudding with whipped cream',
                                 ingredients: [
-                                    { name: 'canned rts rice pudding', quantity: 4, unit: 'cans', group: 'pantry'},
-                                    { name: 'milk', quantity: 1, unit: 'bags', group: 'dairy'},
+                                    { name: 'banana pudding powder', quantity: 2, unit: 'bags', group: 'pantry'},
+                                    { name: 'milk', quantity: 16, unit: 'litres', group: 'dairy'},
                                     { name: 'whipped cream', quantity: 6, unit: 'bags', group: 'frozen'}
                                 ],
-                                option: 'diced pears',
+                                option: 'diced peaches',
                                 ingredients: [
-                                    { name: 'canned pears', quantity: 3, unit: 'cans', group: 'pantry'}
+                                    { name: 'canned peaches', quantity: 3, unit: 'cans', group: 'pantry'}
                                 ]
                             }],
                         salad:
@@ -1014,45 +993,46 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{
-                                option: 'BBQ Ribette On A Bun',
+                                option: 'Pulled Chicken',
                                 ingredients: [
-                                    { name: 'frozen ribette', quantity: 3, unit: 'boxes', group: 'frozen'}
+                                    { name: 'frozen shredded chicken', quantity: 4, unit: 'boxes', group: 'frozen'}
                                 ],
-                                option: 'spinach and feta quiche',
+                                option: 'Pastrami Sandwich',
                                 ingredients: [
-                                    { name: 'frozen liquid egg', quantity: 3, unit: 'bags', group: 'frozen'},
-                                    { name: 'frozen spinach nugget', quantity: 4, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'feta cheese', quantity: 4, unit: 'cups', group: 'fresh'}
+                                    { name: 'sliced pastrami', quantity: 3, unit: 'boxes', group: 'fresh'}
                                 ]
                             }],
                         starch:
                             [{
-                                option: 'Bun',
+                                option: 'Macaroni and Cheese',
                                 ingredients: [
-                                    { name: 'hotdog bun', quantity: 65, unit: 'buns', group: 'fresh'}
+                                    { name: 'macaroni noodles', quantity: 6, unit: 'litres', group: 'pantry'},
+                                    { name: 'cheese sauce', quantity: 2, unit: 'bags', group: 'pantry'},
                                 ],
-                                option: 'spinach and feta quiche',
+                                option: 'Pastrami Sandwich',
                                 ingredients: [
-                                    { name: 'frozen pie shells', quantity: 15, unit: 'each', group: 'frozen'}
+                                    { name: 'whole wheat bread', quantity: 12, unit: 'loaves', group: 'fresh'},
+                                    { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'},
+                                    { name: 'margarine cups', quantity: 1, unit: 'box', group: 'fresh'}
                                 ]                            
                             }],
                         vegetable:
                             [{
-                                option: 'Oil & Vinegar Coleslaw',
+                                option: 'Broccoli w/ Cheese Sauce',
                                 ingredients: [
-                                    { name: 'fresh oil & vinegar coleslaw', quantity: 4, unit: 'buckets', group: 'fresh'}
+                                    { name: 'frozen broccoli', quantity: 12, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'cheese sauce', quantity: 1, unit: 'bags', group: 'pantry'}
                                 ],
-                                option: 'french beans',
+                                option: 'Dill Pickle Spears',
                                 ingredients: [
-                                    { name: 'frozen french beans', quantity: 10, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'fresh dill pickle spears', quantity: 2, unit: 'buckets', group: 'fresh'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'strawberry mousse',
+                                option: 'Chocolate Eclair',
                                 ingredients: [
-                                    { name: 'strawberry mousse powder', quantity: 2, unit: 'bags', group: 'pantry'},
-                                    { name: 'milk', quantity: 2, unit: 'bags', group: 'dairy'}
+                                    { name: 'chocolate eclair', quantity: 2, unit: 'boxes', group: 'frozen'}
                                 ],
                                 option: 'fresh orange',
                                 ingredients: [
@@ -1062,9 +1042,9 @@ async function seedDatabase() {
                             }],
                         soup: 
                             [{
-                                option: 'vegetable beef barley',
+                                option: 'Minestrone Soup',
                                 ingredients: [
-                                    { name: 'vegetable beef barley soup mix', quantity: 8, unit: 'bags', group: 'pantry'},
+                                    { name: 'minestrone soup mix', quantity: 8, unit: 'bags', group: 'pantry'},
                                     { name: 'frozen diced carrot', quantity: 1.5, unit: 'kilograms', group: 'frozen'},
                                     { name: 'frozen diced onion', quantity: 1.5, unit: 'kilograms', group: 'frozen'},
                                     { name: 'frozen diced celery', quantity: 1.5, unit: 'kilograms', group: 'frozen'},
@@ -1081,16 +1061,16 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{ option: 'soft boiled egg', 
-                                ingredients: [{ name: 'fresh egg', quantity: 90, unit: 'each', group: 'fresh'},
-                                              { name: 'frozen liquid egg', quantity: 2, unit: 'bags', group: 'frozen'}]
+                                ingredients: [{ name: 'fresh egg', quantity: 90, unit: 'each', group: 'fresh' },
+                                              { name: 'frozen liquid egg', quantity: 2, unit: 'bags', group: 'frozen' }]
                             }],
                         starch:
                             [{ option: 'whole wheat bread', 
-                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves', group: 'fresh'},
+                                ingredients: [{ name: 'whole wheat bread', quantity: 10, unit: 'loaves', group: 'fresh' },
                                               { name: 'frozen bread puree', quantity: 3, unit: 'rolls', group: 'frozen'}],
                                 option: 'raisin bread',
                                 ingredients: [
-                                    { name: 'raisin bread', quantity: 6, unit: 'loaves', group: 'fresh'},
+                                    { name: ' raisin bread', quantity: 6, unit: 'loaves', group: 'fresh'},
                                     { name: 'apple spice bread puree', quantity: 1, unit: 'rolls', group: 'frozen'}
                                 ],
                                 option: 'oatmeal',
@@ -1113,51 +1093,45 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{ 
-                                option: 'pollock fingers', 
+                                option: 'Dutch Beef Rollade', 
                                 ingredients: [
-                                    { name: 'frozen pollock fingers', quantity: 2, unit: 'boxes', group: 'frozen'},
-                                    { name: 'frozen blue cod', quantity: 1, unit: 'boxes', group: 'frozen'},
-                                    { name: 'tartar sauce', quantity: 4, unit: 'litres', group: 'pantry'}
-                                ], 
+                                    { name: 'frozen beef rollade roasts', quantity: 3, unit: 'roasts', group: 'frozen' }
+                                ]
                             },
                             {
-                                option: 'pork rollade',
+                                option: 'Teriyaki Chicken Stir Fry',
                                 ingredients: [
-                                    { name: 'frozen pork rollade roast', quantity: 4, unit: 'each', group: 'frozen'}
+                                    { name: 'frozen diced chicken', quantity: 2, unit: 'boxes', group: 'frozen'}
                                 ]
                             }],
                         starch: 
                             [{
-                                option: 'mashed potatoes',
+                                option: 'Au Gratin potatoes',
                                 ingredients: [
-                                    { name: 'instant mashed potato', quantity: 3, unit: 'bags', group: 'pantry'},
-                                    { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'},
-                                    { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
+                                    { name: 'au gratin potato', quantity: 3, unit: 'boxes', group: 'pantry'}
                                 ],
-                                option: 'au gratin potatoes',
+                                option: 'Jasmine Rice',
                                 ingredients : [
-                                    { name: 'au gratin potatoes', quantity: 3, unit: 'boxes', group: 'pantry'}                                    
+                                    { name: 'jasmine rice', quantity: 2, unit: 'litres', group: 'pantry'}                                    
                                 ]
                             }],
                         vegetable: 
                             [{
-                                option: 'broccoli and cauliflower',
+                                option: 'Green Beans',
                                 ingredients: [
-                                    { name: 'frozen broccoli', quantity: 6, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen cauliflower', quantity: 6, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'frozen green beans', quantity: 12, unit: 'kilograms', group: 'frozen'}
                                 ],
-                                option: 'roasted squash',
+                                option: 'Teriyaki Chicken Stir Fry',
                                 ingredients: [
-                                    { name: 'fresh squash', quantity: 16, unit: 'kilograms', group: 'fresh'},
-                                    { name: 'cinnamon', quantity: 1, unit: 'each', group: 'seasoning'},
-                                    { name: 'canola oil', quantity: 1, unit: 'each', group: 'pantry'}
+                                    { name: 'frozen stir fry mix', quantity: 10, unit: 'kilograms', group: 'frozen'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'Lemon Meringue Pie',
+                                option: 'Key Lime Pie with whipped cream',
                                 ingredients: [
-                                    { name: 'frozen lemon meringue pie', quantity: 15, unit: 'each', group: 'frozen'}
+                                    { name: 'frozen key lime pie', quantity: 15, unit: 'each', group: 'frozen'},
+                                    { name: 'whipped cream', quantity: 6, unit: 'bags', group: 'frozen'}
                                 ],
                                 option: 'mandarin oranges',
                                 ingredients: [
@@ -1179,10 +1153,9 @@ async function seedDatabase() {
                     components: {
                         protein: 
                             [{
-                                option: 'maple bacon chicken thigh',
+                                option: 'Octoberfest Sausage',
                                 ingredients: [
-                                    { name: 'chicken thigh', quantity: 70, unit: 'each', group: 'frozen'},
-                                    { name: 'frozen diced chicken', quantity: 1, unit: 'boxes', group: 'frozen'}
+                                    { name: 'frozen octoberfest sausage', quantity: 100, unit: 'each', group: 'frozen'}
                                 ],
                                 option: 'gouda cheese on a raisin bun',
                                 ingredients: [
@@ -1192,10 +1165,11 @@ async function seedDatabase() {
                             }],
                         starch:
                             [{
-                                option: 'roasted potato with sour cream',
+                                option: 'mashed potatoes',
                                 ingredients: [
-                                    { name: 'frozen diced potato', quantity: 4, unit: 'bags', group: 'frozen'},
-                                    { name: 'sour cream', quantity: 1, unit: 'tubs', group: 'fresh'}
+                                    { name: 'instant mashed potato', quantity: 4, unit: 'bags', group: 'pantry'},
+                                    { name: 'margarine', quantity: 2, unit: 'cups', group: 'fresh'},
+                                    { name: 'cream', quantity: 1, unit: 'litres', group: 'dairy'}
                                 ],
                                 option: 'gouda cheese on a raisin bun',
                                 ingredients: [
@@ -1206,40 +1180,36 @@ async function seedDatabase() {
                             }],
                         vegetable:
                             [{
-                                option: 'mixed vegetables',
+                                option: 'Dutch Red Cabbage',
                                 ingredients: [
-                                    { name: 'frozen red pepper', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen green pepper', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen corn', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen diced onion', quantity: 2, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen zucchini', quantity: 2, unit: 'kilograms', group: 'frozen'}
+                                    { name: 'fresh red cabbage', quantity: 12, unit: 'kilograms', group: 'fresh'}
                                 ],
-                                option: 'watermelon',
+                                option: 'Fruit Salad',
                                 ingredients: [
-                                    { name: 'fresh watermelon', quantity: 3, unit: 'each', group: 'produce'}
+                                    { name: 'fresh fruit salad', quantity: 4, unit: 'buckets', group: 'fresh'}
                                 ]
                             }],
                         dessert:
                             [{
-                                option: 'vanilla ice cream',
+                                option: 'butterscotch ice cream',
                                 ingredients: [
-                                    { name: 'vanilla ice cream cups', quantity: 6, unit: 'boxes', group: 'frozen'},
-                                    { name: 'rainbow sorbet', quantity: 1, unit: 'each', group: 'frozen'},
+                                    { name: 'butterscotch ice cream cups', quantity: 12, unit: 'boxes', group: 'frozen'},
+                                    { name: 'butterscotch ice cream bulk', quantity: 2, unit: 'boxes', group: 'frozen'},
+                                    { name: 'LF butterscotch ice cream bulk', quantity: 2, unit: 'boxes', group: 'frozen'},
                                     { name: 'whipped cream', quantity: 6, unit: 'bags', group: 'frozen'}
                                 ],
-                                option: 'Apple',
+                                option: 'Fresh Pear',
                                 ingredients: [
-                                    { name: 'fresh apple', quantity: 20, unit: 'each', group: 'produce'},
-                                    { name: 'canned sliced apples', quantity: 1, unit: 'cans', group: 'pantry'}
+                                    { name: 'fresh pear', quantity: 20, unit: 'each', group: 'produce'},
+                                    { name: 'canned diced pear', quantity: 1, unit: 'cans', group: 'pantry'}
                                 ]
                             }],
                         soup: 
                             [{
-                                option: 'cream of mushroom',
+                                option: 'Cauliflower and Cheese',
                                 ingredients: [
-                                    { name: 'cream of broccoli soup mix', quantity: 8, unit: 'bags', group: 'pantry'},
-                                    { name: 'frozen broccoli', quantity: 1, unit: 'kilograms', group: 'frozen'},
-                                    { name: 'frozen spinach nuggets', quantity: 1, unit: 'kilograms', group: 'frozen'},
+                                    { name: 'cream of cauliflower soup mix', quantity: 8, unit: 'bags', group: 'pantry'},
+                                    { name: 'frozen cauliflower', quantity: 1, unit: 'kilograms', group: 'frozen'},
                                     { name: 'flax flour', quantity: 3, unit: 'cups', group: 'pantry'},
                                     { name: 'red lentils', quantity: 4, unit: 'cups', group: 'pantry'}
                                 ]
@@ -1251,8 +1221,8 @@ async function seedDatabase() {
     ]
 });
 try{
-await week1.save();
-console.log("Seed data added!");
+await week2.save();
+console.log("Seed data for week 2 added!");
 mongoose.connection.close();
 }catch(err){
     console.error("Error saving week 1:", err.message);
