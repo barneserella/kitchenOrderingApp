@@ -99,7 +99,7 @@
 
         <div class="group-column">
         <button class="button fresh" data-group="fresh">Fresh</button>
-        <ul class="group-list fresh">
+        <ul class="group-list fresh show">
             <!-- <button class="button fresh" data-group="fresh">Fresh</button> -->
             <% ingredients.forEach(ingredient => { %>
                 <% if(ingredient.group === 'fresh') { %> 
@@ -115,7 +115,7 @@
         
         <div class="group-column">
         <button class="button frozen" data-group="frozen">Frozen</button>
-        <ul class="group-list frozen">
+        <ul class="group-list frozen show">
             <!-- <button class="button frozen" data-group="frozen">Frozen</button> -->
             <% ingredients.forEach(ingredient => { %>
                 <% if(ingredient.group === 'frozen') { %> 
@@ -131,7 +131,7 @@
 
         <div class="group-column">        
         <button class="button pantry" data-group="pantry">Pantry</button>
-        <ul class="group-list pantry">
+        <ul class="group-list pantry show">
             <!-- <button class="button pantry" data-group="pantry">Pantry</button> -->
             <% ingredients.forEach(ingredient => { %>
                 <% if(ingredient.group === 'pantry') { %> 
@@ -147,7 +147,7 @@
         
         <div class="group-column">
         <button class="button produce" data-group="produce">Produce</button>
-        <ul class="group-list produce">
+        <ul class="group-list produce show">
             <!-- <button class="button produce" data-group="produce">Produce</button> -->
             <% ingredients.forEach(ingredient => { %>
                 <% if(ingredient.group === 'produce') { %> 

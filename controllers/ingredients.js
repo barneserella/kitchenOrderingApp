@@ -59,11 +59,40 @@ module.exports = {
         try {
             const selectedDays = await getSelectedDaysAcrossWeeks(startDay, endDay, startWeek, endWeek);
             console.log('Selected Days:', selectedDays);
-            // console.log(selectedDays.dayName[Tuesday].meals)
-            const ingredientsMap = {};
 
-            selectedDays.forEach(day => {
-                ['breakfast', 'lunch', 'supper'].forEach(mealType => {
+            // Ingredients Map for gathering all ingredients
+            const ingredientsMap = new Map();
+
+            // for(const day of selectedDays) {
+            //     for(const mealType of ['breakfast', 'lunch', 'supper']) {
+            //         const meals = day.meals[mealType];
+            //         if(!meals) return;
+
+            //         for(const meal of meals) {
+            //             for(const componentArray of Object.values(meal.components)) {
+            //                 for(const option of componentArray) {
+            //                     if(option.ingredients) {
+            //                         for(const ingredient of option.ingredients) {
+            //                             const key = `${ingredient.name}-${ingredient.unit}`;
+
+            //                             if(ingredientsMap.has(key)) {
+            //                                 const existing = ingredientsMap.get(key);
+            //                                 existing.quantity += ingredient.quantity;
+            //                             }else {
+            //                                 ingredientsMap.set(key, { ...ingredient });
+            //                             }
+            //                         }
+            //                     }
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+            // selectedDays.forEach(day => {
+            //     ['breakfast', 'lunch', 'supper'].forEach(mealType => {
+            //         const meals = day.meals[mealType];
+                for(const day of selectedDays) {
+                for(const mealType of ['breakfast', 'lunch', 'supper']) {
                     const meals = day.meals[mealType];
                     if (!meals) return;
 
@@ -81,10 +110,11 @@ module.exports = {
                             });
                         });
                     });
-                });
-            });
+                };
+            };
 
             const totalIngredients = Object.values(ingredientsMap).map(ingredient => ingredient.toObject ? ingredient.toObject() : ingredient);
+            // const totalIngredients = Array.from(ingredientsMap.values()).map(ingredient => ingredient.toObject ? ingredient.toObject() : ingredient);
 
             res.render("get_ingredients.ejs", {
                 ingredients: totalIngredients,

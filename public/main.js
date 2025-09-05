@@ -19,56 +19,15 @@ buttons.forEach(button => button.addEventListener('click', hideGroup));
 function hideGroup(event) {
   let clickedButton = event.target.dataset;
   console.log('Clicked Button: ', clickedButton);
-  // let liArray = [ ...clickedButton.parentNode.children];
-  // const li = liArray.filter(child => child !== clickedButton);
-  // console.log('ButtonId: ', li[0].id);
   
-// NEED TO TOGGLE CLASS AFTER FIRST BUTTON CLICK
-
+  // Toggle each list by class
+  
   lists.forEach(list => {
-    console.log(list.classList.contains(clickedButton.group))
-    // console.log(clickedButton.group) frozen
-    if(list.classList.contains(clickedButton.group)){
-      list.classList.remove('hidden')
-    }else{
-      list.classList.add('hidden')
-    }
+    // console.log(list.classList.contains(clickedButton.group))
+
+    if (list.classList.contains(clickedButton.group)) {
+    list.classList.toggle('show');
+    list.classList.toggle('hidden');
+  }
   })
 };
-  // if(li[0].id === 'produce'){
-  //   li.forEach(e => e.classList.add('show'));
-  //   pantry.forEach(e => e.classList.add('hidden'));
-  //   fresh.forEach(e => e.classList.add('hidden'));
-  //   frozen.forEach(e => e.classList.add('hidden'));
-  // }else if(li[0].id === 'pantry'){
-  //   li.forEach(e => e.classList.add('show'));
-  //   produce.forEach(e => e.classList.add('hidden'));
-  //   fresh.forEach(e => e.classList.add('hidden'));
-  //   frozen.forEach(e => e.classList.add('hidden'));
-  // }else if(li[0].id === 'fresh'){
-  //   li.forEach(e => e.classList.add('show'));
-  //   produce.forEach(e => e.classList.add('hidden'));
-  //   pantry.forEach(e => e.classList.add('hidden'));
-  //   frozen.forEach(e => e.classList.add('hidden'));
-  // }else if(li[0].id === 'frozen'){
-  //   li.forEach(e => e.classList.add('show'));
-  //   produce.forEach(e => e.classList.add('hidden'));
-  //   fresh.forEach(e => e.classList.add('hidden'));
-  //   pantry.forEach(e => e.classList.add('hidden'));
-  // }else if(li[0].id === 'dairy'){
-  //   li.forEach(e => e.classList.add('show'));
-  //   li.forEach(e => e.classList.toggle('hidden'));
-  //   produce.forEach(e => e.classList.add('hidden'));
-  //   fresh.forEach(e => e.classList.add('hidden'));
-  //   frozen.forEach(e => e.classList.add('hidden'));
-  //   pantry.forEach(e => e.classList.add('hidden'))
-  // }else if(li[0].id === 'seasoning'){
-  //   li.forEach(e => e.classList.add('show'));
-  //   li.forEach(e => e.classList.toggle('hidden'));
-  //   produce.forEach(e => e.classList.add('hidden'));
-  //   fresh.forEach(e => e.classList.add('hidden'));
-  //   frozen.forEach(e => e.classList.add('hidden'));
-  //   pantry.forEach(e => e.classList.add('hidden'));
-  // }
-
-
