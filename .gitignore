@@ -1,3 +1,5 @@
 node_modules
 .env
-
+seed/seedDataFW1.js
+seed/seedDataFW2.js
+seed/seedDataFW3.js

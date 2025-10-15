@@ -20,9 +20,15 @@ module.exports = {
 
         async function getSelectedDaysAcrossWeeks(startDay, endDay, startWeek, endWeek) {
             const weeksToFetch = [];
-            for (let i = Number(startWeek); i <= Number(endWeek); i++) {
+            console.log(startDay, endDay, startWeek, endWeek)
+            if(startWeek > endWeek){
+                for (let i = Number(startWeek); i <= Number(endWeek); i--) {
                 weeksToFetch.push(i);
             }
+            }else {
+            for (let i = Number(startWeek); i <= Number(endWeek); i++) {
+                weeksToFetch.push(i);
+            }}
 
             console.log('Weeks to fetch:', weeksToFetch);
 
