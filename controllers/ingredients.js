@@ -22,13 +22,28 @@ module.exports = {
             const weeksToFetch = [];
             console.log(startDay, endDay, startWeek, endWeek)
             if(startWeek > endWeek){
-                for (let i = Number(startWeek); i <= Number(endWeek); i--) {
-                weeksToFetch.push(i);
-            }
-            }else {
+                let current = Number(startWeek);
+                weeksToFetch.push(current);
+                console.log('current = startWeek: ', current)
+
+                let iterations = 0
+                let maxIterations = 3
+        
+                while (current !== Number(endWeek) && iterations < maxIterations) {
+                    current++;
+                    if (current > 3) {
+                        current = 1; // Wrap around
+                    }
+                    console.log('While loop current: ', current)
+                    weeksToFetch.push(current);
+                    iterations++
+            }}else {
+                
             for (let i = Number(startWeek); i <= Number(endWeek); i++) {
                 weeksToFetch.push(i);
-            }}
+            }
+                }
+        
 
             console.log('Weeks to fetch:', weeksToFetch);
 
@@ -60,44 +75,18 @@ module.exports = {
             }
 
             return selectedDays;
+            
         }
 
         try {
-            const selectedDays = await getSelectedDaysAcrossWeeks(startDay, endDay, startWeek, endWeek);
-            console.log('Selected Days:', selectedDays);
+            const selectedDaysAcrossWeeks = await getSelectedDaysAcrossWeeks(startDay, endDay, startWeek, endWeek);
+            console.log('Length of selectedDaysAcrossWeeks: ', selectedDaysAcrossWeeks.length)
+            console.log('Selected Days Across Weeks:', selectedDaysAcrossWeeks);
 
             // Ingredients Map for gathering all ingredients
             const ingredientsMap = new Map();
 
-            // for(const day of selectedDays) {
-            //     for(const mealType of ['breakfast', 'lunch', 'supper']) {
-            //         const meals = day.meals[mealType];
-            //         if(!meals) return;
-
-            //         for(const meal of meals) {
-            //             for(const componentArray of Object.values(meal.components)) {
-            //                 for(const option of componentArray) {
-            //                     if(option.ingredients) {
-            //                         for(const ingredient of option.ingredients) {
-            //                             const key = `${ingredient.name}-${ingredient.unit}`;
-
-            //                             if(ingredientsMap.has(key)) {
-            //                                 const existing = ingredientsMap.get(key);
-            //                                 existing.quantity += ingredient.quantity;
-            //                             }else {
-            //                                 ingredientsMap.set(key, { ...ingredient });
-            //                             }
-            //                         }
-            //                     }
-            //                 }
-            //             }
-            //         }
-            //     }
-            // }
-            // selectedDays.forEach(day => {
-            //     ['breakfast', 'lunch', 'supper'].forEach(mealType => {
-            //         const meals = day.meals[mealType];
-                for(const day of selectedDays) {
+                for(const day of selectedDaysAcrossWeeks) {
                 for(const mealType of ['breakfast', 'lunch', 'supper']) {
                     const meals = day.meals[mealType];
                     if (!meals) return;
