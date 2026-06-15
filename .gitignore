@@ -3,3 +3,6 @@ node_modules
 seed/seedDataFW1.js
 seed/seedDataFW2.js
 seed/seedDataFW3.js
+seed/seedDataSS1.js
+seed/seedDataSS2.js
+seed/seedDataSS3.js

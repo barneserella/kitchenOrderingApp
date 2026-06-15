@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Ingredients Needed</title>
 </head>
 <body>
     
     <h1>Get Ingredients Needed</h1>
-    
+    <div class="form-container" >
     <div class="form-control form-style">
         <form action="/ingredients" method="POST">
 
@@ -41,8 +42,9 @@
                 <option value="Sunday">Sunday</option>
             </select>
             <br>
-            <button type="submit">Get Ingredients</button>
+            <button class="button-wrap" type="submit">Get Ingredients</button>
           </form>
+    </div>
     </div>
 
     <!-- <pre><%= JSON.stringify(ingredients, null, 2) %></pre> -->

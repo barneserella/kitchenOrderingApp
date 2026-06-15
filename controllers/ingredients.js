@@ -110,7 +110,7 @@ module.exports = {
 
             const totalIngredients = Object.values(ingredientsMap).map(ingredient => ingredient.toObject ? ingredient.toObject() : ingredient);
             // const totalIngredients = Array.from(ingredientsMap.values()).map(ingredient => ingredient.toObject ? ingredient.toObject() : ingredient);
-
+            console.log("Look for this!! totalIngredients:", totalIngredients)
             res.render("get_ingredients.ejs", {
                 ingredients: totalIngredients,
                 error: null,
