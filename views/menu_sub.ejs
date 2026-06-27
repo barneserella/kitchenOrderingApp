@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Menu Substitution</title>
+</head>
+<body>
+    
+    <h1>Menu Substitution</h1>
+    <div class="form-container" >
+    <div class="form-control form-style">
+        <form action="/menu/menusub" method="POST">
+
+            <label>Week Number:</label>
+            <input type="number" name="weekNumber" />
+
+            <label>Day:</label>
+            <select name="day">
+              <option value="Monday">Monday</option>
+              <option value="Tuesday">Tuesday</option>
+              <option value="Wednesday">Wednesday</option>
+              <option value="Thursday">Thursday</option>
+              <option value="Friday">Friday</option>
+              <option value="Saturday">Saturday</option>
+              <option value="Sunday">Sunday</option>
+            </select>
+
+            <label>Meal:</label>
+            <select name="meal" id="meal">
+                <option value="breakfast">Breakfast</option>
+                <option value="lunch">Lunch</option>
+                <option value="supper">Supper</option>
+            </select>
+
+            <label>Component:</label>
+            <select name="component" id="component">
+                <option value="protein">Protein</option>
+                <option value="starch">Starch</option>
+                <option value="vegetable">Vegetable</option>
+                <option value="dessert">Dessert</option>
+                <option value="soup">Soup</option>
+                <option value="salad">Salad</option>
+            </select>
+            <label>Choice:</label>
+            <select name="componentIndex" id="componentIndex">
+                <option value="0">Choice 1</option>
+                <option value="1">Choice 2</option>
+            </select>
+
+            <button class="button-wrap" type="submit">Get Current Option</button>
+          </form>
+    </div>
+    </div>
+
+    <% if (name) { %>
+    <h2>Current Option for Week: <%= weekNumber %> Day:<%= day %> Meal: <%= meal %> Component: <%= component %></h2>
+
+    <div>Option: <%= name %> Ingredients: <%= ingredients %></div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Ingredient</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+                <th>Group</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% ingredients.forEach(ingredient => { %>
+                <tr>
+                    <td><%= ingredient.name %></td>
+                    <td><%= ingredient.quantity %></td>
+                    <td><%= ingredient.unit %></td>
+                    <td><%= ingredient.group %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <% } %>
+    <script src="/main.js"></script>
+</body>
+</html>
